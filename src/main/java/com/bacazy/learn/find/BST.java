@@ -2,6 +2,7 @@ package com.bacazy.learn.find;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -11,6 +12,21 @@ import java.util.Stack;
  * @param <Value>
  */
 public class BST<Key extends Comparable<Key>, Value> implements SortedST<Key, Value> {
+
+    private class Node {
+        Key key;
+        Value value;
+        int size = 0;
+        Node left;
+        Node right;
+
+        public Node(){}
+
+        public Node(Key key, Value value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
 
     Node root;
 
@@ -105,46 +121,187 @@ public class BST<Key extends Comparable<Key>, Value> implements SortedST<Key, Va
     }
 
     /**
-     * @param key
-     * @return
+     * 升序的顺序
+     * @param key 目标键值
+     * @return 排名
      */
     public int rank(Key key) {
         return rank(root, key);
     }
 
     private int rank(Node root, Key key) {
+        if (root == null){
+            return 0;
+        }
+        int cmp = key.compareTo(root.key);
+        if (cmp == 0){
+            return count(root.left);
+        }
+        if (cmp > 0){
+            return 1 + count(root.left) + rank(root.right, key);
+        }
 
-
-        return 0;
+        return rank(root.left, key);
     }
 
     public Key select(int k) {
-
-        return null;
+        Node node = select(root,k);
+        if (node == null){
+            return null;
+        }
+        return node.key;
     }
 
-    public void deleteMin() {
+    private Node select(Node node, int k) {
+        if (node == null){
+            return null;
+        }
+        int s = count(node.left);
+        if (s == k){
+            return node;
+        }
 
+        if (s > k){
+            return select(node.left,k);
+        }else {
+            return select(node.right, k - s - 1);
+        }
+    }
+
+    /**
+     * 若树为空，则直接返回不处理
+     */
+    public void deleteMin() {
+        if (root == null){
+            return;
+        }
+        if (root.left == null){
+            root = root.right;
+            return;
+        }
+
+        Node node = root;
+        Stack<Node> route = new Stack<Node>();
+        while (node.left != null){
+            route.add(node);
+            node = node.left;
+        }
+
+        //父节点的左连接 指向 最小值的 右子树，这样就删除了最小值
+        Node leaf = route.pop();
+        Node parent = route.peek();
+        parent.left = leaf.right;
+
+        while (!route.isEmpty()){//更新节点计数器
+            Node n = route.pop();
+            n.size = count(n.left) + count(n.right) + 1;
+        }
     }
 
     public void deleteMax() {
+        if (root == null){
+            return;
+        }
+        if (root.right == null){
+            root = root.left;
+            return;
+        }
 
+        Node node = root;
+        Stack<Node> route = new Stack<Node>();
+        while (node.right != null){
+            route.add(node);
+            node = node.right;
+        }
+
+        //父节点的右连接 指向 最大值的 左子树，这样就删除了最大值
+        Node leaf = route.pop();
+        Node parent = route.peek();
+        parent.right = leaf.left;
+
+        while (!route.isEmpty()){//更新节点计数器
+            Node n = route.pop();
+            n.size = count(n.left) + count(n.right) + 1;
+        }
     }
 
+    /**
+     * 闭区间
+     * @param low 下限
+     * @param high 上限
+     * @return 数量
+     */
     public int size(Key low, Key high) {
-        return 0;
+        List<Key> ls = new ArrayList<Key>();
+        keys(root, ls, low, high);
+        return ls.size();
+    }
+
+    private void keys(Node node, List<Key> list, Key low, Key high) {
+        if (node == null){
+            return;
+        }
+        int cmplow = low.compareTo(node.key);
+        int cmphigh = high.compareTo(node.key);
+        if (cmplow < 0){
+            keys(node.left,list,low,high);
+        }
+        if (cmplow >= 0 && cmphigh >= 0){
+            list.add(node.key);
+        }
+        if (cmphigh > 0){
+            keys(node.right, list, low, high);
+        }
     }
 
     public Iterable<Key> keys(Key low, Key high) {
-        return null;
+        List<Key> ls = new ArrayList<Key>();
+        keys(root, ls, low, high);
+        return ls;
     }
 
     public Iterable<Value> values(Key low, Key high) {
-        return null;
+        List<Value> ls = new ArrayList<Value>();
+        values(root, ls, low, high);
+        return ls;
+    }
+
+    private void values(Node node, List<Value> list, Key low, Key high) {
+        if (node == null){
+            return;
+        }
+        int cmplow = low.compareTo(node.key);
+        int cmphigh = high.compareTo(node.key);
+        if (cmplow < 0){
+            values(node.left, list, low, high);
+        }
+        if (cmplow >= 0 && cmphigh >= 0){
+            list.add(node.value);
+        }
+        if (cmphigh > 0){
+            values(node.right, list, low, high);
+        }
     }
 
     public void put(Key key, Value value) {
+        root = put(root, key, value);
+    }
 
+    private Node put(Node node, Key key, Value value) {
+        if (node == null){
+            return new Node(key,value);
+        }
+
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0){
+            node.left = put(node.left,key,value);
+        }else if (cmp > 0){
+            node.right = put(node.right,key,value);
+        }else {
+            node.value =value;
+        }
+        node.size = count(node.left) + count(node.right) + 1;
+        return node;
     }
 
     public Value get(Key key) {
@@ -164,7 +321,53 @@ public class BST<Key extends Comparable<Key>, Value> implements SortedST<Key, Va
     }
 
     public void delete(Key key) {
+        root = delete(root, key);
+    }
 
+    private Node delete(Node node, Key key) {
+        if (node == null){
+            return null;
+        }
+
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0){
+            node.left = delete(node.left,key);
+        }else if (cmp > 0){
+            node.right = delete(node.right,key);
+        }else {
+            if (node.right == null){
+                return node.left;
+            }
+            if (node.left == null){
+                return node.right;
+            }
+            Node t = node;
+            node = min(t.right);
+            node.right = deleteMin(t.right);
+            node.left = t.left;
+        }
+        node.size = count(node.left) + count(node.right) + 1;
+        return node;
+    }
+
+    private Node deleteMin(Node x) {
+        if (x.left == null){
+            return x.right;
+        }
+        x.left = deleteMin(x.left);
+        x.size = count(x.left) + count(x.right) + 1;
+        return x;
+    }
+
+    private Node min(Node node) {
+        if (node == null){
+            return null;
+        }
+
+        while (node.left != null){
+            node = node.left;
+        }
+        return node;
     }
 
     public boolean contains(Key key) {
@@ -239,12 +442,5 @@ public class BST<Key extends Comparable<Key>, Value> implements SortedST<Key, Va
         InOrderVisit(values, root.right);
     }
 
-    private class Node {
-        Key key;
-        Value value;
-        int size = 0;
-        Node left;
-        Node right;
 
-    }
 }
