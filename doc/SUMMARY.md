@@ -1,18 +1,18 @@
 # 目录
 
 * [简介](README.md)
-* [JAVA基础]
+* [JAVA基础](JAVA.md)
     - [初始化](JAVA-initial.md)
     - [泛型](JAVA-generics.md)
     - [多线程](JAVA-thread.md)
     - [反射](JAVA-reflect.md)
     - [JVM](JAVA-jvm.md)
-* [数据结构与算法]
+* [数据结构与算法](DATA.md)
     - [排序算法](DATA-sort.md)
     - [查找算法](DATA-find.md)
     - [图](DATA-graph.md)
-* [计算机网络]
-* [操作系统]
-* [数据库]
+* [计算机网络](NET.md)
+* [操作系统](SYS.md)
+* [数据库](DB.md)
     - [InnoDB存储引擎](DB-InnoDB.md)
-* [常用框架]
+* [常用框架](FW.md)
