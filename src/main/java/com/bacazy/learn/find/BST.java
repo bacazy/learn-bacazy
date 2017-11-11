@@ -16,7 +16,7 @@ public class BST<Key extends Comparable<Key>, Value> implements SortedST<Key, Va
     private class Node {
         Key key;
         Value value;
-        int size = 0;
+        int size = 1;
         Node left;
         Node right;
 
@@ -403,19 +403,16 @@ public class BST<Key extends Comparable<Key>, Value> implements SortedST<Key, Va
         List<Key> keys = new ArrayList<Key>();
         Stack<Node> stack = new Stack<Node>();
         Node node = root;
-        while (node != null) {
-            stack.push(node);
-            node = node.left;
-        }
-        while (!stack.isEmpty()) {
-            Node n = stack.pop();
-            keys.add(n.key);
-            if (n.right != null) {
-                n = n.right;
-                while (n != null) {
-                    stack.push(n.left);
-                    n = n.left;
-                }
+        //TODO:BUG
+
+        while (node == null || !stack.isEmpty()) {
+            if (node != null){
+                stack.push(node);
+                node = node.left;
+            }else {
+                node = stack.pop();
+                keys.add(node.key);
+
             }
         }
 
@@ -442,5 +439,32 @@ public class BST<Key extends Comparable<Key>, Value> implements SortedST<Key, Va
         InOrderVisit(values, root.right);
     }
 
+    public void print(){
+        if (root == null){
+            System.out.println("Empty Tree");
+            return;
+        }
+        int depth = Math.max(depth(root.left),depth(root.right)) + 1;
+        Key[] keys = (Key[]) new Object[1<<(depth-1)];
+        fill(keys,root,0);
 
+    }
+
+
+
+    private void fill(Key[] keys, Node node, int index) {
+        if (node == null){
+            return;
+        }
+        keys[index] = node.key;
+        fill(keys,node.left, 2*index + 1);
+        fill(keys,node.right, 2*index + 2);
+    }
+
+    private int depth(Node node) {
+        if (node == null){
+            return 1;
+        }
+        return Math.max(depth(node.left), depth(node.right)) + 1;
+    }
 }
