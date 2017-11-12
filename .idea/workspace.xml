@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1bb5586-8b6f-433b-b76b-8516d1f76ccd" name="Default" comment="包整理">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/bacazy/learn/find/BSTTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/BinaryTree.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/bacazy/learn/find/SearchTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/TreeNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/DATA-sort.md" afterPath="$PROJECT_DIR$/doc/DATA-sort.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/BST.java" afterPath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/BST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/DATA-find.md" afterPath="$PROJECT_DIR$/doc/DATA-find.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/DATA-graph.md" afterPath="$PROJECT_DIR$/doc/DATA-graph.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/JAVA-generics.md" afterPath="$PROJECT_DIR$/doc/JAVA-generics.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/JAVA-initial.md" afterPath="$PROJECT_DIR$/doc/JAVA-initial.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/JAVA-jvm.md" afterPath="$PROJECT_DIR$/doc/JAVA-jvm.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/JAVA-reflect.md" afterPath="$PROJECT_DIR$/doc/JAVA-reflect.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/JAVA-thread.md" afterPath="$PROJECT_DIR$/doc/JAVA-thread.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/bacazy/learn/find/BSTTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/bacazy/learn/find/BSTTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/BinaryTree.java" afterPath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/BinaryTree.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/JAVA/JAVA-generics.md" afterPath="$PROJECT_DIR$/doc/JAVA/JAVA-generics.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/SYS/SYS.md" afterPath="$PROJECT_DIR$/doc/SYS/SYS.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -119,26 +110,380 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BST.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BST.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/BST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1190476">
-              <caret line="461" column="5" selection-start-line="461" selection-start-column="5" selection-end-line="461" selection-end-column="5" />
-              <folding>
-                <element signature="e#9661#9668#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="210" column="10" selection-start-line="210" selection-start-column="10" selection-end-line="210" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BSTTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/bacazy/learn/find/BSTTest.java">
+      <file leaf-file-name="Stack.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Stack.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JAVA/java.util" pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/java.util">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>java.util</OriginalElement>
+              <nodes>
+                <node x="23.333333333333258" y="260.0">java.util.Vector</node>
+                <node x="87.25" y="665.0">java.util.LinkedHashMap</node>
+                <node x="484.92069327731093" y="665.0">java.util.TreeMap</node>
+                <node x="794.0104166666665" y="170.0">java.util.SortedSet</node>
+                <node x="563.0104166666665" y="340.0">java.util.PriorityQueue</node>
+                <node x="506.5208333333332" y="80.0">java.util.AbstractCollection</node>
+                <node x="579.375" y="585.0">java.util.NavigableMap</node>
+                <node x="725.8118872549019" y="340.0">java.util.TreeSet</node>
+                <node x="121.21874999999989" y="260.0">java.util.ArrayList</node>
+                <node x="919.0104166666665" y="340.0">java.util.LinkedHashSet</node>
+                <node x="442.0104166666665" y="340.0">java.util.ArrayDeque</node>
+                <node x="223.2187499999999" y="260.0">java.util.AbstractSequentialList</node>
+                <node x="61.48897058823525" y="80.0">java.util.List</node>
+                <node x="589.375" y="505.0">java.util.SortedMap</node>
+                <node x="676.0104166666665" y="170.0">java.util.AbstractSet</node>
+                <node x="402.2187499999999" y="260.0">java.util.Deque</node>
+                <node x="250.0" y="415.0">java.util.Map</node>
+                <node x="504.5729166666665" y="0.0">java.util.Collection</node>
+                <node x="241.5" y="585.0">java.util.concurrent.ConcurrentHashMap</node>
+                <node x="419.7187499999999" y="170.0">java.util.Queue</node>
+                <node x="0.0" y="340.0">java.util.Stack</node>
+                <node x="218.0" y="505.0">java.util.concurrent.ConcurrentMap</node>
+                <node x="913.0104166666665" y="260.0">java.util.HashSet</node>
+                <node x="267.5618872549019" y="340.0">java.util.LinkedList</node>
+                <node x="361.0" y="505.0">java.util.AbstractMap</node>
+                <node x="559.5104166666665" y="260.0">java.util.AbstractQueue</node>
+                <node x="872.8333333333333" y="80.0">java.util.Set</node>
+                <node x="0.0" y="415.0">java.util.Dictionary</node>
+                <node x="36.91666666666657" y="170.0">java.util.RandomAccess</node>
+                <node x="201.66666666666657" y="170.0">java.util.AbstractList</node>
+                <node x="784.0104166666665" y="260.0">java.util.NavigableSet</node>
+                <node x="133.5" y="585.0">java.util.HashMap</node>
+                <node x="22.5" y="505.0">java.util.Hashtable</node>
+                <node x="438.375" y="585.0">java.util.WeakHashMap</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="java.util.HashMap" target="java.util.Map">
+                  <point x="-22.0" y="-15.0" />
+                  <point x="155.5" y="485.0" />
+                  <point x="271.07142857142856" y="485.0" />
+                  <point x="-8.428571428571445" y="15.0" />
+                </edge>
+                <edge source="java.util.Deque" target="java.util.Queue">
+                  <point x="0.0" y="-15.0" />
+                  <point x="-17.5" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractSet" target="java.util.Set">
+                  <point x="24.5" y="-15.0" />
+                  <point x="749.5104166666665" y="140.0" />
+                  <point x="879.0833333333333" y="140.0" />
+                  <point x="-18.75" y="15.0" />
+                </edge>
+                <edge source="java.util.LinkedList" target="java.util.AbstractSequentialList">
+                  <point x="0.0" y="-15.0" />
+                  <point x="312.0618872549019" y="320.0" />
+                  <point x="302.7187499999999" y="320.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.ArrayList" target="java.util.AbstractList">
+                  <point x="27.333333333333343" y="-15.0" />
+                  <point x="189.55208333333326" y="240.0" />
+                  <point x="251.16666666666657" y="240.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.SortedMap" target="java.util.Map">
+                  <point x="0.0" y="-15.0" />
+                  <point x="638.375" y="465.0" />
+                  <point x="304.7857142857143" y="465.0" />
+                  <point x="25.285714285714278" y="15.0" />
+                </edge>
+                <edge source="java.util.ArrayDeque" target="java.util.AbstractCollection">
+                  <point x="25.25" y="-15.0" />
+                  <point x="517.7604166666665" y="320.0" />
+                  <point x="523.4479166666665" y="320.0" />
+                  <point x="523.4479166666665" y="150.0" />
+                  <point x="557.8958333333333" y="150.0" />
+                  <point x="-17.125" y="15.0" />
+                </edge>
+                <edge source="java.util.LinkedList" target="java.util.Deque">
+                  <point x="29.666666666666686" y="-15.0" />
+                  <point x="341.7285539215686" y="320.0" />
+                  <point x="419.7187499999999" y="320.0" />
+                  <point x="-17.5" y="15.0" />
+                </edge>
+                <edge source="java.util.TreeMap" target="java.util.AbstractMap">
+                  <point x="-21.25" y="-15.0" />
+                  <point x="506.17069327731093" y="640.0" />
+                  <point x="427.875" y="640.0" />
+                  <point x="13.375" y="15.0" />
+                </edge>
+                <edge source="java.util.TreeSet" target="java.util.NavigableSet">
+                  <point x="19.0" y="-15.0" />
+                  <point x="782.8118872549019" y="320.0" />
+                  <point x="838.5104166666665" y="320.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.LinkedHashSet" target="java.util.Set">
+                  <point x="29.25" y="-15.0" />
+                  <point x="1006.7604166666665" y="320.0" />
+                  <point x="1002.5104166666665" y="320.0" />
+                  <point x="1002.5104166666665" y="140.0" />
+                  <point x="916.5833333333333" y="140.0" />
+                  <point x="18.75" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractCollection" target="java.util.Collection">
+                  <point x="0.0" y="-15.0" />
+                  <point x="575.0208333333333" y="60.0" />
+                  <point x="560.1979166666665" y="60.0" />
+                  <point x="11.125" y="15.0" />
+                </edge>
+                <edge source="java.util.NavigableSet" target="java.util.SortedSet">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.WeakHashMap" target="java.util.AbstractMap">
+                  <point x="-30.25" y="-15.0" />
+                  <point x="468.625" y="565.0" />
+                  <point x="454.625" y="565.0" />
+                  <point x="40.125" y="15.0" />
+                </edge>
+                <edge source="java.util.LinkedHashMap" target="java.util.HashMap">
+                  <point x="31.5" y="-15.0" />
+                  <point x="181.75" y="640.0" />
+                  <point x="177.5" y="640.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.concurrent.ConcurrentHashMap" target="java.util.concurrent.ConcurrentMap">
+                  <point x="-38.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.HashMap" target="java.util.AbstractMap">
+                  <point x="22.0" y="-15.0" />
+                  <point x="199.5" y="555.0" />
+                  <point x="374.375" y="555.0" />
+                  <point x="-40.125" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractList" target="java.util.AbstractCollection">
+                  <point x="24.75" y="-15.0" />
+                  <point x="275.9166666666666" y="140.0" />
+                  <point x="523.6458333333333" y="140.0" />
+                  <point x="-51.375" y="15.0" />
+                </edge>
+                <edge source="java.util.ArrayList" target="java.util.List">
+                  <point x="0.0" y="-15.0" />
+                  <point x="162.2187499999999" y="220.0" />
+                  <point x="167.41666666666657" y="220.0" />
+                  <point x="167.41666666666657" y="150.0" />
+                  <point x="93.36397058823525" y="150.0" />
+                  <point x="6.375" y="15.0" />
+                </edge>
+                <edge source="java.util.Queue" target="java.util.Collection">
+                  <point x="0.0" y="-15.0" />
+                  <point x="454.7187499999999" y="130.0" />
+                  <point x="440.8333333333333" y="130.0" />
+                  <point x="440.8333333333333" y="60.0" />
+                  <point x="537.9479166666665" y="60.0" />
+                  <point x="-11.125" y="15.0" />
+                </edge>
+                <edge source="java.util.List" target="java.util.Collection">
+                  <point x="0.0" y="-15.0" />
+                  <point x="86.98897058823525" y="50.0" />
+                  <point x="515.6979166666665" y="50.0" />
+                  <point x="-33.375" y="15.0" />
+                </edge>
+                <edge source="java.util.Vector" target="java.util.List">
+                  <point x="-23.333333333333314" y="-15.0" />
+                  <point x="34.99999999999994" y="240.0" />
+                  <point x="26.416666666666572" y="240.0" />
+                  <point x="26.416666666666572" y="150.0" />
+                  <point x="80.61397058823525" y="150.0" />
+                  <point x="-6.375" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractMap" target="java.util.Map">
+                  <point x="0.0" y="-15.0" />
+                  <point x="414.5" y="485.0" />
+                  <point x="287.92857142857144" y="485.0" />
+                  <point x="8.428571428571445" y="15.0" />
+                </edge>
+                <edge source="java.util.NavigableMap" target="java.util.SortedMap">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.TreeSet" target="java.util.AbstractSet">
+                  <point x="-19.0" y="-15.0" />
+                  <point x="744.8118872549019" y="320.0" />
+                  <point x="700.5104166666665" y="320.0" />
+                  <point x="-24.5" y="15.0" />
+                </edge>
+                <edge source="java.util.LinkedHashSet" target="java.util.HashSet">
+                  <point x="-29.25" y="-15.0" />
+                  <point x="948.2604166666665" y="320.0" />
+                  <point x="952.5104166666665" y="320.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.PriorityQueue" target="java.util.AbstractQueue">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.LinkedHashMap" target="java.util.Map">
+                  <point x="-31.5" y="-15.0" />
+                  <point x="118.75" y="640.0" />
+                  <point x="123.0" y="640.0" />
+                  <point x="123.0" y="475.0" />
+                  <point x="262.64285714285717" y="475.0" />
+                  <point x="-16.857142857142833" y="15.0" />
+                </edge>
+                <edge source="java.util.HashSet" target="java.util.AbstractSet">
+                  <point x="-19.75" y="-15.0" />
+                  <point x="932.7604166666665" y="240.0" />
+                  <point x="749.5104166666665" y="240.0" />
+                  <point x="24.5" y="15.0" />
+                </edge>
+                <edge source="java.util.concurrent.ConcurrentMap" target="java.util.Map">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractList" target="java.util.List">
+                  <point x="-24.75" y="-15.0" />
+                  <point x="226.41666666666657" y="140.0" />
+                  <point x="106.11397058823525" y="140.0" />
+                  <point x="19.125" y="15.0" />
+                </edge>
+                <edge source="java.util.WeakHashMap" target="java.util.Map">
+                  <point x="30.25" y="-15.0" />
+                  <point x="529.125" y="475.0" />
+                  <point x="296.3571428571429" y="475.0" />
+                  <point x="16.85714285714289" y="15.0" />
+                </edge>
+                <edge source="java.util.Vector" target="java.util.RandomAccess">
+                  <point x="0.0" y="-15.0" />
+                  <point x="58.33333333333326" y="240.0" />
+                  <point x="66.91666666666657" y="240.0" />
+                  <point x="-30.0" y="15.0" />
+                </edge>
+                <edge source="java.util.concurrent.ConcurrentHashMap" target="java.util.AbstractMap">
+                  <point x="38.0" y="-15.0" />
+                  <point x="355.5" y="565.0" />
+                  <point x="401.125" y="565.0" />
+                  <point x="-13.375" y="15.0" />
+                </edge>
+                <edge source="java.util.Hashtable" target="java.util.Map">
+                  <point x="22.5" y="-15.0" />
+                  <point x="90.0" y="465.0" />
+                  <point x="254.21428571428572" y="465.0" />
+                  <point x="-25.285714285714278" y="15.0" />
+                </edge>
+                <edge source="java.util.Stack" target="java.util.Vector">
+                  <point x="0.0" y="-15.0" />
+                  <point x="31.5" y="320.0" />
+                  <point x="58.33333333333326" y="320.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.SortedSet" target="java.util.Set">
+                  <point x="0.0" y="-15.0" />
+                  <point x="838.5104166666665" y="150.0" />
+                  <point x="891.5833333333333" y="150.0" />
+                  <point x="-6.25" y="15.0" />
+                </edge>
+                <edge source="java.util.Set" target="java.util.Collection">
+                  <point x="0.0" y="-15.0" />
+                  <point x="897.8333333333333" y="60.0" />
+                  <point x="582.4479166666665" y="60.0" />
+                  <point x="33.375" y="15.0" />
+                </edge>
+                <edge source="java.util.TreeMap" target="java.util.NavigableMap">
+                  <point x="21.25" y="-15.0" />
+                  <point x="548.6706932773109" y="640.0" />
+                  <point x="638.375" y="640.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.Hashtable" target="java.util.Dictionary">
+                  <point x="-22.5" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractQueue" target="java.util.AbstractCollection">
+                  <point x="29.5" y="-15.0" />
+                  <point x="648.0104166666665" y="150.0" />
+                  <point x="592.1458333333333" y="150.0" />
+                  <point x="17.125" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractQueue" target="java.util.Queue">
+                  <point x="-29.5" y="-15.0" />
+                  <point x="589.0104166666665" y="240.0" />
+                  <point x="472.2187499999999" y="240.0" />
+                  <point x="17.5" y="15.0" />
+                </edge>
+                <edge source="java.util.ArrayDeque" target="java.util.Deque">
+                  <point x="-25.25" y="-15.0" />
+                  <point x="467.2604166666665" y="320.0" />
+                  <point x="454.7187499999999" y="320.0" />
+                  <point x="17.5" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractSequentialList" target="java.util.AbstractList">
+                  <point x="0.0" y="-15.0" />
+                  <point x="302.7187499999999" y="240.0" />
+                  <point x="284.1666666666666" y="240.0" />
+                  <point x="33.0" y="15.0" />
+                </edge>
+                <edge source="java.util.LinkedList" target="java.util.List">
+                  <point x="-29.666666666666686" y="-15.0" />
+                  <point x="282.39522058823525" y="310.0" />
+                  <point x="9.833333333333258" y="310.0" />
+                  <point x="9.833333333333258" y="140.0" />
+                  <point x="67.86397058823525" y="140.0" />
+                  <point x="-19.125" y="15.0" />
+                </edge>
+                <edge source="java.util.HashSet" target="java.util.Set">
+                  <point x="19.75" y="-15.0" />
+                  <point x="972.2604166666665" y="150.0" />
+                  <point x="904.0833333333333" y="150.0" />
+                  <point x="6.25" y="15.0" />
+                </edge>
+                <edge source="java.util.ArrayList" target="java.util.RandomAccess">
+                  <point x="-27.333333333333314" y="-15.0" />
+                  <point x="134.88541666666657" y="220.0" />
+                  <point x="126.91666666666657" y="220.0" />
+                  <point x="30.0" y="15.0" />
+                </edge>
+                <edge source="java.util.AbstractSet" target="java.util.AbstractCollection">
+                  <point x="-24.5" y="-15.0" />
+                  <point x="700.5104166666665" y="140.0" />
+                  <point x="626.3958333333333" y="140.0" />
+                  <point x="51.375" y="15.0" />
+                </edge>
+                <edge source="java.util.Vector" target="java.util.AbstractList">
+                  <point x="23.33333333333333" y="-15.0" />
+                  <point x="81.66666666666657" y="230.0" />
+                  <point x="218.16666666666657" y="230.0" />
+                  <point x="-33.0" y="15.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="518.5" y="347.5" />
+              <SelectedNodes />
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TreeNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/TreeNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -223,9 +568,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/BinaryTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/TreeNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/BST.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/BinaryTree.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/bacazy/learn/find/BSTTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/BST.java" />
       </list>
     </option>
   </component>
@@ -319,8 +664,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -328,6 +673,90 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1085,6 +1514,8 @@
       <workItem from="1510207945384" duration="1276000" />
       <workItem from="1510276694317" duration="3713000" />
       <workItem from="1510283511914" duration="17405000" />
+      <workItem from="1510403633369" duration="4667000" />
+      <workItem from="1510469163739" duration="2904000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1508392628977</created>
@@ -1108,7 +1539,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254444000" />
+    <option name="totallyTimeSpent" value="262015000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1120,35 +1551,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4642857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12100213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13166311" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23376623" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4664502" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17430703" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18070363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27680525" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20149253" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.241342" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2965368" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46320346" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4664502" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.412973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1206,7 +1637,7 @@
           <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="79" />
+      <option name="time" value="104" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1215,20 +1646,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$MAVEN_REPOSITORY$/com/google/guava/guava/20.0/guava-20.0.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Optional.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/20.0/guava-20.0.jar!/com/google/thirdparty/publicsuffix/TrieParser.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.5">
@@ -1369,12 +1786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#339#340#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-            <element signature="e#1373#1387#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1389,34 +1800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#200#201#0" expanded="false" />
-            <element signature="e#227#228#0" expanded="false" />
-            <element signature="e#260#261#0" expanded="false" />
-            <element signature="e#287#288#0" expanded="false" />
-            <element signature="e#322#323#0" expanded="false" />
-            <element signature="e#349#350#0" expanded="false" />
-            <element signature="e#381#382#0" expanded="false" />
-            <element signature="e#405#406#0" expanded="false" />
-            <element signature="e#437#438#0" expanded="false" />
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#582#583#0" expanded="false" />
-            <element signature="e#606#607#0" expanded="false" />
-            <element signature="e#658#659#0" expanded="false" />
-            <element signature="e#685#686#0" expanded="false" />
-            <element signature="e#741#742#0" expanded="false" />
-            <element signature="e#768#769#0" expanded="false" />
-            <element signature="e#853#854#0" expanded="false" />
-            <element signature="e#880#881#0" expanded="false" />
-            <element signature="e#962#963#0" expanded="false" />
-            <element signature="e#990#991#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1050#1051#0" expanded="false" />
-            <element signature="e#1075#1076#0" expanded="false" />
-            <element signature="e#1099#1100#0" expanded="false" />
-            <element signature="e#1134#1135#0" expanded="false" />
-            <element signature="e#1161#1162#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1438,7 +1821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1446,7 +1828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1454,7 +1835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1462,63 +1842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10138249">
           <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/DATA-graph.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/DATA-sort.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/JAVA-generics.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/JAVA-initial.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/JAVA-jvm.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/JAVA-reflect.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/JAVA-thread.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1526,7 +1849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1534,15 +1856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26506025">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/DATA-find.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1550,30 +1863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37931034">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#168#169#0" expanded="false" />
-            <element signature="e#202#203#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/BinaryTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-          <folding>
-            <element signature="e#159#160#0" expanded="false" />
-            <element signature="e#191#192#0" expanded="false" />
-            <element signature="e#768#781#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1581,7 +1870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7586207">
           <caret line="492" column="30" selection-start-line="492" selection-start-column="30" selection-end-line="492" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1589,7 +1877,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33277026">
           <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/DB/DB-InnoDB.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33277026">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1601,47 +1902,460 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/BinaryTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
+        <state vertical-scroll-proportion="1.9714868">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33248731">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/JUnit38ClassRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5558376">
-          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/BST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="210" column="10" selection-start-line="210" selection-start-column="10" selection-end-line="210" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Stack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/concurrent/ConcurrentSkipListMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.922905">
+          <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/bacazy/learn/find/BSTTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.73743016">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/BST.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/TreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1190476">
-          <caret line="461" column="5" selection-start-line="461" selection-start-column="5" selection-end-line="461" selection-end-column="5" />
-          <folding>
-            <element signature="e#9661#9668#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/concurrent/ConcurrentMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3329609">
+          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/TreeSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3329609">
+          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6312849">
+          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.5976877">
+          <caret line="313" column="21" selection-start-line="313" selection-start-column="16" selection-end-line="313" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/function/DoubleToIntFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3441341">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/function/BiConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3083799">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/java.util">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>java.util</OriginalElement>
+          <nodes>
+            <node x="23.333333333333258" y="260.0">java.util.Vector</node>
+            <node x="87.25" y="665.0">java.util.LinkedHashMap</node>
+            <node x="484.92069327731093" y="665.0">java.util.TreeMap</node>
+            <node x="794.0104166666665" y="170.0">java.util.SortedSet</node>
+            <node x="563.0104166666665" y="340.0">java.util.PriorityQueue</node>
+            <node x="506.5208333333332" y="80.0">java.util.AbstractCollection</node>
+            <node x="579.375" y="585.0">java.util.NavigableMap</node>
+            <node x="725.8118872549019" y="340.0">java.util.TreeSet</node>
+            <node x="121.21874999999989" y="260.0">java.util.ArrayList</node>
+            <node x="919.0104166666665" y="340.0">java.util.LinkedHashSet</node>
+            <node x="442.0104166666665" y="340.0">java.util.ArrayDeque</node>
+            <node x="223.2187499999999" y="260.0">java.util.AbstractSequentialList</node>
+            <node x="61.48897058823525" y="80.0">java.util.List</node>
+            <node x="589.375" y="505.0">java.util.SortedMap</node>
+            <node x="676.0104166666665" y="170.0">java.util.AbstractSet</node>
+            <node x="402.2187499999999" y="260.0">java.util.Deque</node>
+            <node x="250.0" y="415.0">java.util.Map</node>
+            <node x="504.5729166666665" y="0.0">java.util.Collection</node>
+            <node x="241.5" y="585.0">java.util.concurrent.ConcurrentHashMap</node>
+            <node x="419.7187499999999" y="170.0">java.util.Queue</node>
+            <node x="0.0" y="340.0">java.util.Stack</node>
+            <node x="218.0" y="505.0">java.util.concurrent.ConcurrentMap</node>
+            <node x="913.0104166666665" y="260.0">java.util.HashSet</node>
+            <node x="267.5618872549019" y="340.0">java.util.LinkedList</node>
+            <node x="361.0" y="505.0">java.util.AbstractMap</node>
+            <node x="559.5104166666665" y="260.0">java.util.AbstractQueue</node>
+            <node x="872.8333333333333" y="80.0">java.util.Set</node>
+            <node x="0.0" y="415.0">java.util.Dictionary</node>
+            <node x="36.91666666666657" y="170.0">java.util.RandomAccess</node>
+            <node x="201.66666666666657" y="170.0">java.util.AbstractList</node>
+            <node x="784.0104166666665" y="260.0">java.util.NavigableSet</node>
+            <node x="133.5" y="585.0">java.util.HashMap</node>
+            <node x="22.5" y="505.0">java.util.Hashtable</node>
+            <node x="438.375" y="585.0">java.util.WeakHashMap</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="java.util.HashMap" target="java.util.Map">
+              <point x="-22.0" y="-15.0" />
+              <point x="155.5" y="485.0" />
+              <point x="271.07142857142856" y="485.0" />
+              <point x="-8.428571428571445" y="15.0" />
+            </edge>
+            <edge source="java.util.Deque" target="java.util.Queue">
+              <point x="0.0" y="-15.0" />
+              <point x="-17.5" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractSet" target="java.util.Set">
+              <point x="24.5" y="-15.0" />
+              <point x="749.5104166666665" y="140.0" />
+              <point x="879.0833333333333" y="140.0" />
+              <point x="-18.75" y="15.0" />
+            </edge>
+            <edge source="java.util.LinkedList" target="java.util.AbstractSequentialList">
+              <point x="0.0" y="-15.0" />
+              <point x="312.0618872549019" y="320.0" />
+              <point x="302.7187499999999" y="320.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.ArrayList" target="java.util.AbstractList">
+              <point x="27.333333333333343" y="-15.0" />
+              <point x="189.55208333333326" y="240.0" />
+              <point x="251.16666666666657" y="240.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.SortedMap" target="java.util.Map">
+              <point x="0.0" y="-15.0" />
+              <point x="638.375" y="465.0" />
+              <point x="304.7857142857143" y="465.0" />
+              <point x="25.285714285714278" y="15.0" />
+            </edge>
+            <edge source="java.util.ArrayDeque" target="java.util.AbstractCollection">
+              <point x="25.25" y="-15.0" />
+              <point x="517.7604166666665" y="320.0" />
+              <point x="523.4479166666665" y="320.0" />
+              <point x="523.4479166666665" y="150.0" />
+              <point x="557.8958333333333" y="150.0" />
+              <point x="-17.125" y="15.0" />
+            </edge>
+            <edge source="java.util.LinkedList" target="java.util.Deque">
+              <point x="29.666666666666686" y="-15.0" />
+              <point x="341.7285539215686" y="320.0" />
+              <point x="419.7187499999999" y="320.0" />
+              <point x="-17.5" y="15.0" />
+            </edge>
+            <edge source="java.util.TreeMap" target="java.util.AbstractMap">
+              <point x="-21.25" y="-15.0" />
+              <point x="506.17069327731093" y="640.0" />
+              <point x="427.875" y="640.0" />
+              <point x="13.375" y="15.0" />
+            </edge>
+            <edge source="java.util.TreeSet" target="java.util.NavigableSet">
+              <point x="19.0" y="-15.0" />
+              <point x="782.8118872549019" y="320.0" />
+              <point x="838.5104166666665" y="320.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.LinkedHashSet" target="java.util.Set">
+              <point x="29.25" y="-15.0" />
+              <point x="1006.7604166666665" y="320.0" />
+              <point x="1002.5104166666665" y="320.0" />
+              <point x="1002.5104166666665" y="140.0" />
+              <point x="916.5833333333333" y="140.0" />
+              <point x="18.75" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractCollection" target="java.util.Collection">
+              <point x="0.0" y="-15.0" />
+              <point x="575.0208333333333" y="60.0" />
+              <point x="560.1979166666665" y="60.0" />
+              <point x="11.125" y="15.0" />
+            </edge>
+            <edge source="java.util.NavigableSet" target="java.util.SortedSet">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.WeakHashMap" target="java.util.AbstractMap">
+              <point x="-30.25" y="-15.0" />
+              <point x="468.625" y="565.0" />
+              <point x="454.625" y="565.0" />
+              <point x="40.125" y="15.0" />
+            </edge>
+            <edge source="java.util.LinkedHashMap" target="java.util.HashMap">
+              <point x="31.5" y="-15.0" />
+              <point x="181.75" y="640.0" />
+              <point x="177.5" y="640.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.concurrent.ConcurrentHashMap" target="java.util.concurrent.ConcurrentMap">
+              <point x="-38.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.HashMap" target="java.util.AbstractMap">
+              <point x="22.0" y="-15.0" />
+              <point x="199.5" y="555.0" />
+              <point x="374.375" y="555.0" />
+              <point x="-40.125" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractList" target="java.util.AbstractCollection">
+              <point x="24.75" y="-15.0" />
+              <point x="275.9166666666666" y="140.0" />
+              <point x="523.6458333333333" y="140.0" />
+              <point x="-51.375" y="15.0" />
+            </edge>
+            <edge source="java.util.ArrayList" target="java.util.List">
+              <point x="0.0" y="-15.0" />
+              <point x="162.2187499999999" y="220.0" />
+              <point x="167.41666666666657" y="220.0" />
+              <point x="167.41666666666657" y="150.0" />
+              <point x="93.36397058823525" y="150.0" />
+              <point x="6.375" y="15.0" />
+            </edge>
+            <edge source="java.util.Queue" target="java.util.Collection">
+              <point x="0.0" y="-15.0" />
+              <point x="454.7187499999999" y="130.0" />
+              <point x="440.8333333333333" y="130.0" />
+              <point x="440.8333333333333" y="60.0" />
+              <point x="537.9479166666665" y="60.0" />
+              <point x="-11.125" y="15.0" />
+            </edge>
+            <edge source="java.util.List" target="java.util.Collection">
+              <point x="0.0" y="-15.0" />
+              <point x="86.98897058823525" y="50.0" />
+              <point x="515.6979166666665" y="50.0" />
+              <point x="-33.375" y="15.0" />
+            </edge>
+            <edge source="java.util.Vector" target="java.util.List">
+              <point x="-23.333333333333314" y="-15.0" />
+              <point x="34.99999999999994" y="240.0" />
+              <point x="26.416666666666572" y="240.0" />
+              <point x="26.416666666666572" y="150.0" />
+              <point x="80.61397058823525" y="150.0" />
+              <point x="-6.375" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractMap" target="java.util.Map">
+              <point x="0.0" y="-15.0" />
+              <point x="414.5" y="485.0" />
+              <point x="287.92857142857144" y="485.0" />
+              <point x="8.428571428571445" y="15.0" />
+            </edge>
+            <edge source="java.util.NavigableMap" target="java.util.SortedMap">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.TreeSet" target="java.util.AbstractSet">
+              <point x="-19.0" y="-15.0" />
+              <point x="744.8118872549019" y="320.0" />
+              <point x="700.5104166666665" y="320.0" />
+              <point x="-24.5" y="15.0" />
+            </edge>
+            <edge source="java.util.LinkedHashSet" target="java.util.HashSet">
+              <point x="-29.25" y="-15.0" />
+              <point x="948.2604166666665" y="320.0" />
+              <point x="952.5104166666665" y="320.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.PriorityQueue" target="java.util.AbstractQueue">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.LinkedHashMap" target="java.util.Map">
+              <point x="-31.5" y="-15.0" />
+              <point x="118.75" y="640.0" />
+              <point x="123.0" y="640.0" />
+              <point x="123.0" y="475.0" />
+              <point x="262.64285714285717" y="475.0" />
+              <point x="-16.857142857142833" y="15.0" />
+            </edge>
+            <edge source="java.util.HashSet" target="java.util.AbstractSet">
+              <point x="-19.75" y="-15.0" />
+              <point x="932.7604166666665" y="240.0" />
+              <point x="749.5104166666665" y="240.0" />
+              <point x="24.5" y="15.0" />
+            </edge>
+            <edge source="java.util.concurrent.ConcurrentMap" target="java.util.Map">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractList" target="java.util.List">
+              <point x="-24.75" y="-15.0" />
+              <point x="226.41666666666657" y="140.0" />
+              <point x="106.11397058823525" y="140.0" />
+              <point x="19.125" y="15.0" />
+            </edge>
+            <edge source="java.util.WeakHashMap" target="java.util.Map">
+              <point x="30.25" y="-15.0" />
+              <point x="529.125" y="475.0" />
+              <point x="296.3571428571429" y="475.0" />
+              <point x="16.85714285714289" y="15.0" />
+            </edge>
+            <edge source="java.util.Vector" target="java.util.RandomAccess">
+              <point x="0.0" y="-15.0" />
+              <point x="58.33333333333326" y="240.0" />
+              <point x="66.91666666666657" y="240.0" />
+              <point x="-30.0" y="15.0" />
+            </edge>
+            <edge source="java.util.concurrent.ConcurrentHashMap" target="java.util.AbstractMap">
+              <point x="38.0" y="-15.0" />
+              <point x="355.5" y="565.0" />
+              <point x="401.125" y="565.0" />
+              <point x="-13.375" y="15.0" />
+            </edge>
+            <edge source="java.util.Hashtable" target="java.util.Map">
+              <point x="22.5" y="-15.0" />
+              <point x="90.0" y="465.0" />
+              <point x="254.21428571428572" y="465.0" />
+              <point x="-25.285714285714278" y="15.0" />
+            </edge>
+            <edge source="java.util.Stack" target="java.util.Vector">
+              <point x="0.0" y="-15.0" />
+              <point x="31.5" y="320.0" />
+              <point x="58.33333333333326" y="320.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.SortedSet" target="java.util.Set">
+              <point x="0.0" y="-15.0" />
+              <point x="838.5104166666665" y="150.0" />
+              <point x="891.5833333333333" y="150.0" />
+              <point x="-6.25" y="15.0" />
+            </edge>
+            <edge source="java.util.Set" target="java.util.Collection">
+              <point x="0.0" y="-15.0" />
+              <point x="897.8333333333333" y="60.0" />
+              <point x="582.4479166666665" y="60.0" />
+              <point x="33.375" y="15.0" />
+            </edge>
+            <edge source="java.util.TreeMap" target="java.util.NavigableMap">
+              <point x="21.25" y="-15.0" />
+              <point x="548.6706932773109" y="640.0" />
+              <point x="638.375" y="640.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.Hashtable" target="java.util.Dictionary">
+              <point x="-22.5" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractQueue" target="java.util.AbstractCollection">
+              <point x="29.5" y="-15.0" />
+              <point x="648.0104166666665" y="150.0" />
+              <point x="592.1458333333333" y="150.0" />
+              <point x="17.125" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractQueue" target="java.util.Queue">
+              <point x="-29.5" y="-15.0" />
+              <point x="589.0104166666665" y="240.0" />
+              <point x="472.2187499999999" y="240.0" />
+              <point x="17.5" y="15.0" />
+            </edge>
+            <edge source="java.util.ArrayDeque" target="java.util.Deque">
+              <point x="-25.25" y="-15.0" />
+              <point x="467.2604166666665" y="320.0" />
+              <point x="454.7187499999999" y="320.0" />
+              <point x="17.5" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractSequentialList" target="java.util.AbstractList">
+              <point x="0.0" y="-15.0" />
+              <point x="302.7187499999999" y="240.0" />
+              <point x="284.1666666666666" y="240.0" />
+              <point x="33.0" y="15.0" />
+            </edge>
+            <edge source="java.util.LinkedList" target="java.util.List">
+              <point x="-29.666666666666686" y="-15.0" />
+              <point x="282.39522058823525" y="310.0" />
+              <point x="9.833333333333258" y="310.0" />
+              <point x="9.833333333333258" y="140.0" />
+              <point x="67.86397058823525" y="140.0" />
+              <point x="-19.125" y="15.0" />
+            </edge>
+            <edge source="java.util.HashSet" target="java.util.Set">
+              <point x="19.75" y="-15.0" />
+              <point x="972.2604166666665" y="150.0" />
+              <point x="904.0833333333333" y="150.0" />
+              <point x="6.25" y="15.0" />
+            </edge>
+            <edge source="java.util.ArrayList" target="java.util.RandomAccess">
+              <point x="-27.333333333333314" y="-15.0" />
+              <point x="134.88541666666657" y="220.0" />
+              <point x="126.91666666666657" y="220.0" />
+              <point x="30.0" y="15.0" />
+            </edge>
+            <edge source="java.util.AbstractSet" target="java.util.AbstractCollection">
+              <point x="-24.5" y="-15.0" />
+              <point x="700.5104166666665" y="140.0" />
+              <point x="626.3958333333333" y="140.0" />
+              <point x="51.375" y="15.0" />
+            </edge>
+            <edge source="java.util.Vector" target="java.util.AbstractList">
+              <point x="23.33333333333333" y="-15.0" />
+              <point x="81.66666666666657" y="230.0" />
+              <point x="218.16666666666657" y="230.0" />
+              <point x="-33.0" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="518.5" y="347.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

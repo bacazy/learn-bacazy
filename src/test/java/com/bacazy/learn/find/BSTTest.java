@@ -10,22 +10,23 @@ public class BSTTest extends TestCase {
     static Random random = new Random();
     int[] list = null;
     int size = 0;
+    private final static int SIZE = 100;
 
     public void setUp() throws Exception {
         super.setUp();
         size = 0;
         bst = new BST<Integer, Integer>();
-        list = new int[100];
-        for (int i = 0; i < 100; i++) {
-            int key = random.nextInt(200);
-            bst.put(key,random.nextInt(200));
+        list = new int[SIZE];
+        for (int i = 0; i < SIZE; i++) {
+            int key = random.nextInt(SIZE * 3);
+            bst.put(key,random.nextInt(SIZE * 3));
             list[i] = key;
         }
         Arrays.sort(list);
-        int[] ne = new int[100];
+        int[] ne = new int[SIZE];
         ne[0] = list[0];
         size++;
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < SIZE; i++) {
             if (list[i] == list[i-1]){
                 continue;
             }
@@ -47,7 +48,15 @@ public class BSTTest extends TestCase {
     }
 
     public void testFloor() throws Exception {
-
+        int a = 0;
+        for (int i : list){
+            if (a == 0 || list[a-1] == list[a] - 1){
+                a++;
+                continue;
+            }
+            a++;
+            assertEquals(i,(int) bst.ceiling(i-1));
+        }
     }
 
     public void testCeiling() throws Exception {
@@ -55,11 +64,15 @@ public class BSTTest extends TestCase {
     }
 
     public void testRank() throws Exception {
-
+        for (int i = 0; i < list.length; i++) {
+            assertEquals(i , bst.rank(list[i]));
+        }
     }
 
     public void testSelect() throws Exception {
-
+        for (int i = 0; i < list.length; i++) {
+            assertEquals((Integer)list[i] , bst.select(i));
+        }
     }
 
     public void testDeleteMin() throws Exception {
@@ -73,9 +86,12 @@ public class BSTTest extends TestCase {
     public void testSize() throws Exception {
         Iterable<Integer> keys = bst.keys();
         int i = 0;
+
         for (int k:keys){
-            System.out.printf("%d ", k);
-            System.out.println(list[i++]);
+            i++;
+        }
+        if (size != i){
+            System.out.println("cuol");
         }
     }
 

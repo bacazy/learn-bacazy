@@ -400,19 +400,22 @@ public class BST<Key extends Comparable<Key>, Value> implements SortedST<Key, Va
      * @return 有序
      */
     public Iterable<Key> keys() {
+
         List<Key> keys = new ArrayList<Key>();
         Stack<Node> stack = new Stack<Node>();
+        if (root == null){
+            return keys;
+        }
         Node node = root;
-        //TODO:BUG
 
-        while (node == null || !stack.isEmpty()) {
+        while (node != null||!stack.isEmpty()) {
             if (node != null){
                 stack.push(node);
                 node = node.left;
             }else {
                 node = stack.pop();
                 keys.add(node.key);
-
+                node = node.right;
             }
         }
 

@@ -35,27 +35,15 @@ public class BinaryTree<T> {
 
     public void inOrderVisitLoopImpl(TreeNode<T> node){
         Stack<TreeNode<T>> stack = new Stack<TreeNode<T>>();
-        while (node!=null){
-            stack.push(node);
-            if (node.left != null){
-                node = node.left;
+        TreeNode<T> n = node;
+        while (node != null || !stack.isEmpty()) {
+            if (n != null){
+                stack.push(n);
+                n = n.left;
             }else {
-                break;
-            }
-        }
-        while (!stack.isEmpty()){
-            TreeNode<T> n = stack.pop();
-            visit(n);
-            if (n.right != null){
+                n = stack.pop();
+                visit(n);
                 n = n.right;
-                while (true){
-                    stack.push(n);
-                    if (n.left != null){
-                        n = n.left;
-                    }else {
-                        break;
-                    }
-                }
             }
         }
     }
