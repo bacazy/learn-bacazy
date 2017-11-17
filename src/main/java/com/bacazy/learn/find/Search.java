@@ -2,6 +2,12 @@ package com.bacazy.learn.find;
 
 
 public class Search {
+    /**
+     * 二分查找
+     * @param array 数组
+     * @param target 目标值
+     * @return 目标值的索引
+     */
     int binarySearch(int[] array, int target){
         int lo = 0;
         int hi = array.length - 1;
