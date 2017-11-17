@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e1bb5586-8b6f-433b-b76b-8516d1f76ccd" name="Default" comment="包整理">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java" afterPath="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="algorithm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,18 +103,7 @@
     <favorites_list name="algorithm" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Search.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31578946">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -186,8 +174,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/BST.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/tree/BinaryTree.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/bacazy/learn/find/BSTTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/SeparateChainingHashST.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java" />
       </list>
     </option>
   </component>
@@ -249,6 +237,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -429,9 +419,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,7 +431,7 @@
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../leetcode" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -927,6 +915,7 @@
       <workItem from="1510812845407" duration="261000" />
       <workItem from="1510820731062" duration="233000" />
       <workItem from="1510824597598" duration="121000" />
+      <workItem from="1510905793559" duration="654000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1508392628977</created>
@@ -950,7 +939,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262630000" />
+    <option name="totallyTimeSpent" value="263284000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -976,7 +965,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19427083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19427083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27680525" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20149253" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1752,8 +1741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bacazy/learn/find/Search.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31578946">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.2631579">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
           <folding />
         </state>
       </provider>
