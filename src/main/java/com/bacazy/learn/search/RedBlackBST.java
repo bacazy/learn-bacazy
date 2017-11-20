@@ -1,4 +1,4 @@
-package com.bacazy.learn.find;
+package com.bacazy.learn.search;
 
 public class RedBlackBST<Key extends Comparable<Key>, Value> implements SortedST<Key, Value> {
     public Key min() {

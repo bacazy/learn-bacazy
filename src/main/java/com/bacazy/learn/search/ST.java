@@ -1,4 +1,4 @@
-package com.bacazy.learn.find;
+package com.bacazy.learn.search;
 
 public interface ST<Key extends Comparable<Key>, Value> {
     void put(Key key, Value value);

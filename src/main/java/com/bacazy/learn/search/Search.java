@@ -1,4 +1,4 @@
-package com.bacazy.learn.find;
+package com.bacazy.learn.search;
 
 
 public class Search {

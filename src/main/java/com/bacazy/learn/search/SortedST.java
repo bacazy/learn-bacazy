@@ -1,4 +1,4 @@
-package com.bacazy.learn.find;
+package com.bacazy.learn.search;
 
 public interface SortedST<Key extends Comparable<Key>, Value> extends ST<Key, Value> {
     Key min();
