@@ -24,7 +24,7 @@ public abstract class AbstractGraph implements Graph {
 
     protected abstract void construct(InputStream in);
 
-    public int degree(int v){
+    public int degree(int v){//度
         int degree = 0;
         for (int w: adj(v)){
             degree ++;
@@ -32,7 +32,7 @@ public abstract class AbstractGraph implements Graph {
         return degree;
     }
 
-    public int maxDegree(){
+    public int maxDegree(){//最大度
         int max = 0;
         for (int i = 0; i < V(); i++) {
             if (degree(i) > max){
@@ -42,11 +42,11 @@ public abstract class AbstractGraph implements Graph {
         return max;
     }
 
-    public double avgDegree(){
+    public double avgDegree(){//平均度
         return 2.0 * E() / V();
     }
 
-    public int numberOfSelfLoops(){
+    public int numberOfSelfLoops(){//自环个数
         int count = 0;
         for (int v = 0; v < V(); v++) {
             for (int w : adj(v)) {
@@ -55,6 +55,6 @@ public abstract class AbstractGraph implements Graph {
                 }
             }
         }
-        return count / 2;
+        return count / 2;//重复计算了
     }
 }
