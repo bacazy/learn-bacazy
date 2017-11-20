@@ -65,3 +65,83 @@ public class MatrixGraph extends AbstractGraph {
 }
 ```
 
+邻接链表表示法: 用V个链表存储与v相邻接的顶点，所需的空间为V+E
+```java
+public class AdjListGraph extends AbstractGraph {
+    private List<Integer>[] G;
+    public AdjListGraph(int v) {
+        super(v);
+        G = (List<Integer>[]) new AdjListGraph[v];
+        for (int i = 0; i < v; i++) {G[i] = new ArrayList<Integer>();}
+    }
+    public void addEdge(int v, int w) {
+        G[v].add(w);
+        G[w].add(v);
+        E++;
+    }
+    public Iterable<Integer> adj(int v) {return G[v];}
+}
+```
+图的搜索：
+```java
+public abstract class Search {
+    /**
+     * 源顶点
+     */
+    protected int source;
+    /**
+     * 图
+     */
+    protected AbstractGraph G;
+
+    public Search(AbstractGraph G, int source) {
+        this.source = source;
+        this.G = G;
+    }
+
+    /**
+     * 判断v 和 source是否连通
+     * @param v 目的顶点
+     * @return v 和 source是否连通
+     */
+    public abstract boolean marked(int v);
+
+    /**
+     * 与source连通的顶点总数
+     * @return 与source连通的顶点总数
+     */
+    public abstract int count();
+}
+```
+深度优先搜索：
+```java
+public class DepthFirstSearch extends Search {
+    private boolean[] marked;
+    private int count = 0;
+    public DepthFirstSearch(AbstractGraph G, int source) {
+        super(G, source);
+        marked = new boolean[G.V()];
+        dfs();
+    }
+    private void dfs() {
+        dfs(source);
+    }
+    private void dfs(int v) {
+        marked[v] = true;
+        count++;
+        for (int w: G.adj(v)){
+            if (!marked[w]){
+                dfs(w);
+            }
+        }
+    }
+    @Override
+    public boolean marked(int v) {
+        return marked[v];
+    }
+    @Override
+    public int count() {
+        return count;
+    }
+}
+```
