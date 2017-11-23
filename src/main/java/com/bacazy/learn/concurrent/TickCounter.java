@@ -1,19 +1,12 @@
 package com.bacazy.learn.concurrent;
 
-import java.util.concurrent.locks.Lock;
-
-/**
- * Created by gc_zc on 2017/11/22.
- */
 public class TickCounter {
     static class Counter implements Runnable {
-        public void run() {
+        private Integer count=0;
 
-            tick();
-        }
-
+        public void run() { tick(); }
         private void tick() {
-            synchronized (this) {
+            synchronized (count) {
                 if (count > 100) {
                     count = 0;
                 } else {
@@ -22,7 +15,6 @@ public class TickCounter {
                 System.out.println("count: " + count);
             }
         }
-        private Integer count=0;
     }
 
     public static void main(String[] args){

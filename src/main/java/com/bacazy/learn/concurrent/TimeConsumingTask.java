@@ -1,7 +1,6 @@
 package com.bacazy.learn.concurrent;
 
 import java.util.Random;
-import java.util.concurrent.locks.Lock;
 
 
 public class TimeConsumingTask implements Runnable{
