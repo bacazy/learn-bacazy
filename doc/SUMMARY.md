@@ -11,6 +11,7 @@
     - [排序算法](DA/DA-sort.md)
     - [查找算法](DA/DA-find.md)
     - [图](DA/DA-graph.md)
+    - [算法设计](DA/DA-design.md)
 * [计算机网络](NET/NET.md)
     - [物理层](NET/physical-layer.md)
     - [数据链路层](NET/data-link-layer.md)
