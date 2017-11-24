@@ -3,6 +3,7 @@
 ## 网络服务框架
 
 * [Spring](WEB/spring.md)
+* [MyBatis](WEB/mybatis.md)
 
 ## 机器学习
 
