@@ -29,7 +29,5 @@
     - [索引](DB/index.md)
     - [数据库优化](DB/optimization.md)
 * [常用框架](FW/FW.md)
-    - 网络服务
-        - [Spring](FW/WEB/spring.md)
-    - 机器学习
-        - [Tensorflow](FW/ML/tensorflow.md)
+    - [Spring](FW/WEB/spring.md)
+    - [Tensorflow](FW/ML/tensorflow.md)
