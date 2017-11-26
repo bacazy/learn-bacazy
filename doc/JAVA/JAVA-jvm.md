@@ -32,18 +32,24 @@ JNI调用方法执行如下：
 
 
 DestroyJavaVM
-这个方法可以从启动程序调用来拆除虚拟机，当发生非常严重的错误时，也可以由虚拟机自己调用。
+这个方法可以从启动程序调用来销毁虚拟机，当发生非常严重的错误时，也可以由虚拟机自己调用。
 
-虚拟机的拆卸过程如下：
+虚拟机的销毁过程如下：
 
 1. 等到最后一个执行的非守护线程时，注意到这个虚拟机仍然有效。
 2. 调用java.lang.Shutdown.shutdown(), 会调用Java级关闭钩子
-3. 调用before_exit（），准备VM退出运行VM级关闭挂钩（它们通过JVM_OnExit（）注册），停止Profiler， StatSampler，Watcher和 GC 线程。将状态事件发布到JVMTI / PI，禁用JVMPI，并停止Signal线程。
+3. 调用before\_exit(),准备VM退出运行VM级关闭挂钩(它们通过JVM\_OnExit()注册），停止Profiler， StatSampler，Watcher和 GC 线程。将状态事件发布到JVMTI / PI，禁用JVMPI，并停止Signal线程。
 4. 调用JavaThread :: exit（），释放JNI句柄块，删除堆栈保护页面，并从线程列表中删除此线程。从这个角度来说，我们不能执行更多的Java代码。
 5. 停止虚拟机线程，它会将剩余的虚拟机置于安全点，并停止编译器线程。在安全的情况下，我们应该小心，不要使用任何可能被安全点阻挡的东西。
 6. 禁用JNI / JVM / JVMPI的跟踪。
-7. 为仍在运行本机代码的线程设置_vm_exited标志。
+7. 为仍在运行本机代码的线程设置\_vm\_exited标志。
 8. 删除这个线程。
-9. 调用exit_globals（），它将删除IO和PerfMemory 资源。
+9. 调用exit\_globals（），它将删除IO和PerfMemory 资源。
 10. 返回给调用者。
 
+运行时数据区：
+1. pc，程序计数器。
+1. 栈。
+1. 堆。
+1. 方法区。
+1. 本地方法栈。
