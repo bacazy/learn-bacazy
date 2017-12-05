@@ -32,3 +32,4 @@
     - [Spring](FW/WEB/spring.md)
     - [MyBatis](FW/WEB/mybatis.md)
     - [Tensorflow](FW/ML/tensorflow.md)
+    - [Scrapy](FW/tools/scrapy.md)
