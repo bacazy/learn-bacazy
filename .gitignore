@@ -1,3 +1,6 @@
 target/
 doc/_book
 test/
+.vscode/
+.idea/
+**.pyc
