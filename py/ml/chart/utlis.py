@@ -3,31 +3,21 @@ import os
 import numpy as np
 
 
-class ChartType:
-    PLOT = 'plot'
-
-
-class DataType:
-    TENSION = 'tension'
-    XRD = 'xrd'
+def list2array(o):
+    if type(o) is np.ndarray:
+        return o
+    if type(o) is list:
+        return np.ndarray(o)
+    raise Exception('list or ndarray is expected')
 
 
 def check_keys_and_raise(msg, *keys):
-    if type(msg) is dict:
-        msg = dict(msg)
+    if isinstance(msg, dict):
         for k in keys:
             if not msg.__contains__(k):
                 raise Exception(str(k) + " not exists")
     else:
         raise Exception('illegal params, dict is needed')
-
-
-def check_key(msg, key):
-    if type(msg) is dict:
-        msg = dict(msg)
-        if msg.__contains__(key):
-            return True
-    return False
 
 
 def check_style(style_key, style_value):
@@ -48,14 +38,14 @@ def check_style(style_key, style_value):
         return False
 
 
-def apply_mpl_styles(styles):
+def apply_mpl_style(style):
     """
     设置matplotlib样式
-    :param styles: 自定义样式
+    :param style: 自定义样式
     :return: 无
     """
-    if type(styles) is dict:
-        mpl.rcParams.update(styles)
+    if isinstance(style, dict):
+        mpl.rcParams.update(style)
     else:
         raise Exception('illegal params, dict is needed')
 
@@ -67,8 +57,7 @@ def check_key(params, *keys):
     :param keys: 需要检测的键值
     :return: 是否包含key
     """
-    if type(params) is dict:
-        params = dict(params)
+    if isinstance(params, dict):
         for key in keys:
             if not params.__contains__(key):
                 return False
@@ -77,17 +66,16 @@ def check_key(params, *keys):
         raise Exception('illegal params, dict is needed')
 
 
-def reset_mpl_styles(styles=None):
+def reset_mpl_style(style=None):
     """
     重置mpl样式
-    :param styles: if None，重置所有样式
+    :param style: if None，重置所有样式
     :return: 无
     """
-    if styles is None:
+    if style is None:
         mpl.rcdefaults()
-    elif type(styles) is dict:
-        styles = dict(styles)
-        for key in styles.keys():
+    elif isinstance(style, dict):
+        for key in style.keys():
             if mpl.rcParams.__contains__(key):
                 mpl.rcParams[key] = mpl.rcParamsDefault[key]
     else:
@@ -102,7 +90,7 @@ def check_type(obj, *d_types):
     :return:
     """
     for d_type in d_types:
-        if type(obj) is d_type:
+        if isinstance(obj, d_type):
             return True
     return False
 

@@ -1,6 +1,10 @@
 import json
-from chart.defines import *
+from collections import Iterable
+
+from chart.utlis import *
 import matplotlib.pyplot as plt
+from chart.pipeline import pipeline
+from chart.constant import *
 
 
 class Generator:
@@ -11,7 +15,7 @@ class Generator:
     def __init__(self):
         self.__charts = []
         self.__data = {}
-        self.__styles = {}
+        self.__style = {}
 
     def load(self, define_file):
         if os.path.exists(define_file):
@@ -30,7 +34,6 @@ class Generator:
             self.__parse_data(d, d['type'], os.path.dirname(define_file))
 
         for chart in msg['chart']:
-            check_keys_and_raise(chart, 'type')
             self.__charts.append(chart)
 
     def __parse_data(self, data, data_type, rel_dir):
@@ -44,97 +47,107 @@ class Generator:
     def __parse_xrd_file(self, data, rel_dir):
         check_keys_and_raise(data, 'id', 'file', 'description')
         fp = get_real_path(rel_dir, data['file'])
-        tdata = load_col_data_from_txt(fname=fp, skiprows=1, cnames=['theta', 'I'])
-        tdata['type'] = DataType.XRD
-        tdata['description'] = data['description']
-        tdata['file'] = fp
-        self.__data[data['id']] = tdata
+        t_data = load_col_data_from_txt(fname=fp, skiprows=1, cnames=['theta', 'I'])
+        t_data['type'] = DataType.XRD
+        t_data['description'] = data['description']
+        t_data['file'] = fp
+        self.__data[data['id']] = t_data
 
     def __parse_tension_file(self, data, rel_dir):
         pass
 
     def draw(self):
         for chart in self.__charts:
-            reset_mpl_styles()
-            check_keys_and_raise(chart, 'type')
-            chart_type = chart['type']
-            if chart_type == ChartType.PLOT:
-                self.__draw_plot_chart(chart)
-            else:
-                raise Exception("unknown chart type: " + str(chart_type))
+            reset_mpl_style()
+            if check_key(chart, 'style'):
+                apply_mpl_style(chart['style'])
 
-    def __draw_plot_chart(self, chart):
-        check_keys_and_raise(chart, 'id', 'type')
-        reset_mpl_styles()  # 重置所有样式
+            self.set_figure_size(chart)
+            self.apply_chart_setting(chart)
+
+            check_keys_and_raise(chart, 'series')
+            for series in chart['series']:
+                self.draw_chart_series(series)
+
+            if check_key(chart, 'fname'):
+                plt.savefig(chart['fname'])
+            else:
+                plt.show()
+
+            if check_key(chart, 'style'):
+                reset_mpl_style(chart['style'])
+
+    @staticmethod
+    def set_figure_size(chart):
         height = 8
         width = 10
         if check_key(chart, 'image-width', 'image-height'):
             height = chart['image-height']
             width = chart['image-width']
-        fig = plt.figure(figsize=(width, height))
-        ax = fig.add_subplot(111)
-        if check_key(chart, 'styles'):
-            apply_mpl_styles(chart['styles'])
+        plt.figure(figsize=(width, height))
+
+    @staticmethod
+    def apply_chart_setting(chart):
         if check_key(chart, 'xlim'):
-            ax.set_xlim(chart['xlim'][0], chart['xlim'][1])
+            plt.xlim(chart['xlim'][0], chart['xlim'][1])
         if check_key(chart, 'ylim'):
-            ax.set_ylim(chart['ylim'][0], chart['ylim'][1])
+            plt.ylim(chart['ylim'][0], chart['ylim'][1])
         if check_key(chart, 'xlabel'):
-            ax.set_xlabel(chart['xlabel'])
+            plt.xlabel(chart['xlabel'])
         if check_key(chart, 'ylabel'):
-            ax.set_ylabel(chart['ylabel'])
+            plt.ylabel(chart['ylabel'])
         if check_key(chart, 'title'):
-            ax.set_title(chart['title'])
+            plt.title(chart['title'])
+        if check_key(chart, 'legend') and chart['legend']:
+            plt.legend()
 
-        check_keys_and_raise(chart, 'series')
-        for series in chart['series']:
-            self.__draw_plot(series, ax)
+    def draw_chart_series(self, series):
+        if check_key(series, 'subplot'):
+            plt.subplot(series['subplot'])
+        if check_key(series, 'style'):
+            apply_mpl_style(series['style'])
 
-        if check_key(chart, 'fname'):
-            fig.savefig(chart['fname'])
+        check_keys_and_raise(series, 'type', 'data')
+        chart_type = series['type']
+        chart_data = series['data']
+        if chart_type == ChartType.PLOT:
+            self.plot(chart_data)
         else:
-            fig.show()
+            raise Exception('unknown chart type')
 
-        if check_key(chart, 'styles'):
-            reset_mpl_styles(chart['styles'])
+        if check_key(series, 'style'):
+            reset_mpl_style(series['style'])
 
-    def __draw_plot(self, series, ax):
-        _x = []
-        _y = []
-        if check_key(series, 'data'):
-            check_keys_and_raise(series['data'], 'x', 'y')
-            _x = series['data']['x']
-            _y = series['data']['y']
-            if not type(_x) is list and not type(_y) is list:
-                raise Exception("data should be list type")
-        elif check_key(series, 'data-ref'):
-            _x, _y = self.__query_plot_data(series)
-        if check_key(series, 'styles'):  # 应用样式
-            apply_mpl_styles(series['styles'])
+    def plot(self, chart_data):
+        check_keys_and_raise(chart_data, 'x', 'y')
+        x = chart_data['x']
+        y = chart_data['y']
+        if isinstance(x, str):
+            x = self.query_data(x)
+        if isinstance(y, str):
+            y = self.query_data(y)
 
-        if check_key(series, 'label'):
-            ax.plot(_x, _y, label=series['label'])
+        if check_key(chart_data, 'x_pipeline'):
+            for pipe in chart_data['x_pipeline'].split('|'):
+                if not pipe.isspace() and len(pipe) > 2:
+                    x = pipeline(x, pipe.strip())
+        if check_key(chart_data, 'y_pipeline'):
+            for pipe in chart_data['y_pipeline'].split('|'):
+                if not pipe.isspace() and len(pipe) > 2:
+                    y = pipeline(y, pipe.strip())
+
+        if check_key(chart_data, 'label'):
+            plt.plot(x, y, label=chart_data['label'])
         else:
-            ax.plot(_x, _y)
+            plt.plot(x, y)
 
-        if check_key(series, 'styles'):  # 重置样式
-            reset_mpl_styles(series['styles'])
-
-    def __query_plot_data(self, series):
-        _x = []
-        _y = []
-        ref = series['data-ref']
-        if self.__data.__contains__(ref):
-            data = self.__data.get(ref)
+    def query_data(self, data_key):
+        dot_index = data_key.index('.')
+        d_key = data_key[0:dot_index]
+        d_attr = data_key[dot_index+1:]
+        if self.__data.__contains__(d_key) and self.__data[d_key].__contains__(d_attr):
+            return self.__data[d_key][d_attr]
         else:
-            raise Exception("no data's id is " + ref)
-        check_keys_and_raise(data, 'type')
-        d_type = data['type']
-        if d_type == DataType.XRD:
-            _x = data['theta'].copy()
-            _y = data['I'].copy()
+            raise Exception(data_key + " is not found")
 
-        if check_type(_x, list, np.ndarray) and check_type(_y, list, np.ndarray):
-            return _x, _y
-        else:
-            raise Exception('list type is expected')
+
