@@ -1,0 +1,57 @@
+{
+    "include": [],
+    "data": [
+        {
+            "id": "xrd-y2o3-powder", //required
+            "file" : "2017052701/2017052701.txt",//required
+            "type": "xrd",//required
+            "description": "xrd test y2o3" //required
+        },
+        {
+            "id": "xrd-crn-powder", //required
+            "file" : "2017052702/2017052702.txt",//required
+            "type": "xrd",//required
+            "description": "xrd test y2o3" //required
+        }
+    ],
+    "chart": [
+        {
+            "id": "chart-xrd-y2o3-powder",
+            "type":"plot",
+            "fname":"xrd_y2o3_crn.png",
+            "title":"$Y_2O_3$ Patterns",
+            "xlabel":"2theta",
+            "ylabel":"I",
+            "legend": false,
+            "image-width": 10,
+            "image-height": 8,
+            // "xlim": [10, 90],
+            // "ylim": [0, 90000],
+            "styles": {
+                "axes.titlesize": 16
+            },
+            "series":[
+                {
+                    "data-ref": "xrd-crn-powder",
+                    "styles":{
+                        "lines.linestyle": "--",
+                        "lines.color": "r"
+                    },
+                    "xoffset": 0,
+                    "yoffset": 0,
+                    "offset-ref": "global"
+                },
+                {
+                    "data-ref": "xrd-y2o3-powder",
+                    "styles":{
+                        "lines.marker":"s",
+                        "lines.color": "g" // invalid in plot，use axes.prop_cycler
+                    },
+                    "xoffset": 0,
+                    "yoffset": 0,
+                    "offset-ref": "global"
+                }
+            ]
+        }
+    ]
+}
