@@ -1,4 +1,3 @@
-from collections import Iterable
 
 import numpy as np
 
@@ -91,11 +90,13 @@ def pipeline_callback(target, callback, *args):
         raise Exception('target is undefined')
     if not callable(callback):
         raise Exception('method is undefined')
-    return callback(target, args)
+    target = callback(target, args)
+    return target
 
 
 def pipeline(target, pipe_str: str):
     pipeline_target_local__ = target
+    _local = locals()
     pipe_str = pipe_str.strip()
     bra_index = pipe_str.index('(')
     if bra_index < 0:
@@ -105,5 +106,5 @@ def pipeline(target, pipe_str: str):
     if ket_index < 0:
         raise Exception('invoke error')
     args = pipe_str[bra_index + 1:ket_index]
-    exec(str('pipeline_target_local__  = pipeline_callback(pipeline_target_local__ ,' + method_name + ',' + args + ')'))
-    return pipeline_target_local__
+    exec(str('r = pipeline_callback(pipeline_target_local__ ,' + method_name + ',' + args + ')'), globals(), _local)
+    return _local['r']

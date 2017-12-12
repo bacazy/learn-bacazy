@@ -2,12 +2,14 @@ import matplotlib as mpl
 import os
 import numpy as np
 
+eps = 0.00000001
+
 
 def list2array(o):
     if type(o) is np.ndarray:
         return o
     if type(o) is list:
-        return np.ndarray(o)
+        return np.array(o)
     raise Exception('list or ndarray is expected')
 
 
@@ -15,7 +17,7 @@ def check_keys_and_raise(msg, *keys):
     if isinstance(msg, dict):
         for k in keys:
             if not msg.__contains__(k):
-                raise Exception(str(k) + " not exists")
+                raise Exception("key " + str(k) + " not exists")
     else:
         raise Exception('illegal params, dict is needed')
 
@@ -154,3 +156,48 @@ def load_col_data_from_txt(fname, skiprows=0, comments='#', delimiter=None, cnam
             return data
         else:
             raise Exception('too many col names')
+
+
+def max_in_range(y, x, flag):
+    xl = 0
+    if isinstance(x, np.ndarray):
+        xl = x.shape[0]
+    elif isinstance(x, list):
+        xl = len(x)
+    _y = []
+    for i in range(xl):
+        if flag - 1 < x[i] < flag + 1:
+            _y.append(y[i])
+    return np.max(_y)
+
+
+def skip_theta(x, x_i):
+    flag = x[x_i]
+    xl = 0
+    if isinstance(x, np.ndarray):
+        xl = x.shape[0]
+    elif isinstance(x, list):
+        xl = len(x)
+    for i in range(x_i, xl):
+        if x[i] > flag + 1:
+            return i
+    return len(x)
+
+
+def find_peak(x, y, peak):
+    _I = []
+    _p = []
+    p_i = 0
+    x_i = 0
+    if isinstance(x, list):
+        x = np.array(x)
+    while x_i < x.shape[0] and p_i < len(peak):
+        flag = peak[p_i]
+        if flag <= x[x_i]:
+            _I.append(max_in_range(y, x, flag))
+            _p.append(flag)
+            x_i = skip_theta(x, x_i)
+            p_i = p_i + 1
+        x_i = x_i + 1
+
+    return _p, _I

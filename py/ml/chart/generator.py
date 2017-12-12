@@ -41,8 +41,22 @@ class Generator:
             self.__parse_xrd_file(data, rel_dir)
         elif data_type == DataType.TENSION:
             self.__parse_tension_file(data, rel_dir)
+        elif data_type == DataType.XRD_PATTERN:
+            self.__parse_xrd_pattern_data(data)
         else:
             raise Exception("unknown data type file : " + data_type)
+
+    def __parse_xrd_pattern_data(self, data):
+        check_keys_and_raise(data, 'peak')
+        if not check_type(data['peak'], dict):
+            raise Exception('peak of xrd pattern should be a dict')
+        peaks = dict(data['peak'])
+        if not check_key(self.__data, 'xrd_pattern'):
+            self.__data['xrd_pattern'] = {}
+        for key in peaks.keys():
+            if not check_type(peaks[key], list):
+                raise Exception('peak should be a list')
+            self.__data['xrd_pattern'][key] = peaks.get(key)
 
     def __parse_xrd_file(self, data, rel_dir):
         check_keys_and_raise(data, 'id', 'file', 'description')
@@ -68,6 +82,9 @@ class Generator:
             check_keys_and_raise(chart, 'series')
             for series in chart['series']:
                 self.draw_chart_series(series)
+
+            if check_key(chart, 'legend') and chart['legend']:
+                plt.legend()
 
             if check_key(chart, 'fname'):
                 plt.savefig(chart['fname'])
@@ -98,8 +115,6 @@ class Generator:
             plt.ylabel(chart['ylabel'])
         if check_key(chart, 'title'):
             plt.title(chart['title'])
-        if check_key(chart, 'legend') and chart['legend']:
-            plt.legend()
 
     def draw_chart_series(self, series):
         if check_key(series, 'subplot'):
@@ -112,6 +127,8 @@ class Generator:
         chart_data = series['data']
         if chart_type == ChartType.PLOT:
             self.plot(chart_data)
+        elif chart_type == ChartType.XRD_PATTERN:
+            self.xrd_pattern(chart_data)
         else:
             raise Exception('unknown chart type')
 
@@ -144,10 +161,34 @@ class Generator:
     def query_data(self, data_key):
         dot_index = data_key.index('.')
         d_key = data_key[0:dot_index]
-        d_attr = data_key[dot_index+1:]
+        d_attr = data_key[dot_index + 1:]
         if self.__data.__contains__(d_key) and self.__data[d_key].__contains__(d_attr):
             return self.__data[d_key][d_attr]
         else:
             raise Exception(data_key + " is not found")
 
+    def xrd_pattern(self, chart_data):
+        check_keys_and_raise(chart_data, 'x', 'y', 'peak')
+        x = chart_data['x']
+        y = chart_data['y']
+        peak = chart_data['peak']
+        if isinstance(x, str):
+            x = self.query_data(x)
+        if isinstance(y, str):
+            y = self.query_data(y)
+        if isinstance(peak, str):
+            peak = self.query_data(peak)
 
+        if not isinstance(peak, list):
+            raise Exception('peak should be a list')
+        peak.sort()
+        x, y = find_peak(x, y, peak)
+        y = np.array(y)
+
+        if check_key(chart_data, 'offset') and check_type(chart_data['offset'], float, int):
+            y = y + chart_data['offset']
+
+        if check_key(chart_data, 'label'):
+            plt.plot(x, y, label=chart_data['label'])
+        else:
+            plt.plot(x, y)
