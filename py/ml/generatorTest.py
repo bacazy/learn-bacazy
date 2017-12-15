@@ -1,12 +1,10 @@
-
+# -*- coding: utf-8 -*-
 import chart
+import matplotlib.pyplot as plt
+import os
 
 
 cs = chart.Generator()
-mi = True
-if mi:
-    fp = 'c:/workspace/laji/expriment/raw/XRD/20170527/XRD20170527.json'
-else:
-    fp = 'E:/laji/expriment/raw/XRD/20170527/XRD20170527.json'
+fp = r'E:\laji\expriment\raw\XRD\analysis\xrd.json'
 cs.load(fp)
 cs.draw()

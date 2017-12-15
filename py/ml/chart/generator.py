@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
+
 import json
-from collections import Iterable
 
 from chart.utlis import *
 import matplotlib.pyplot as plt
@@ -19,22 +20,26 @@ class Generator:
 
     def load(self, define_file):
         if os.path.exists(define_file):
-            self.__load(define_file)
+            self.__load(os.path.abspath(define_file))
         else:
             raise Exception(define_file + " not found")
 
     def __load(self, define_file):
+        print("load... ", define_file)
         msg = json.loads(filter_json_annotation(define_file))
-        for inc in msg['include']:
-            fp = get_real_path(os.path.dirname(define_file), inc)
-            self.__load(fp)
+        if check_key(msg, 'include'):
+            for inc in msg['include']:
+                fp = get_real_path(os.path.dirname(define_file), inc)
+                self.__load(fp)
 
-        for d in msg['data']:
-            check_keys_and_raise(d, 'type')
-            self.__parse_data(d, d['type'], os.path.dirname(define_file))
+        if check_key(msg, 'data'):
+            for d in msg['data']:
+                check_keys_and_raise(d, 'type')
+                self.__parse_data(d, d['type'], os.path.dirname(define_file))
 
-        for chart in msg['chart']:
-            self.__charts.append(chart)
+        if check_key(msg, 'chart'):
+            for chart in msg['chart']:
+                self.__charts.append(chart)
 
     def __parse_data(self, data, data_type, rel_dir):
         if data_type == DataType.XRD:
@@ -84,13 +89,17 @@ class Generator:
                 self.draw_chart_series(series)
 
             if check_key(chart, 'legend') and chart['legend']:
-                plt.legend()
+                ncols = 1
+                if check_key(chart, 'legend_ncol'):
+                    ncols = chart['legend_ncol']
+                plt.legend(ncol=ncols)
 
             if check_key(chart, 'fname'):
                 plt.savefig(chart['fname'])
             else:
                 plt.show()
 
+            plt.close()
             if check_key(chart, 'style'):
                 reset_mpl_style(chart['style'])
 
