@@ -1,14 +1,20 @@
 # -*- coding: utf-8 -*-
-from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QTreeView
-
-icon_map = {'dir': QIcon('assets/dir.ico'), 'file': QIcon('assets/file.ico')}
 
 
 class ProjectView(QTreeView):
     def __init__(self, parent=None):
         super().__init__(parent=parent)
-        # self.item = QStandardItem()
-        # self.item.appendColumn()
-        # self.model = QStandardItemModel()
-        # self.model.appendRow()
+        self.model = QStandardItemModel()
+        self.model.setHorizontalHeaderLabels(['Project Structure'])
+        self.setModel(self.model)
+        self.redraw(["As", "Db"])
+
+    def redraw(self, prj):
+        for p in prj:
+            item = QStandardItem(p)
+            for i in range(10):
+                item.appendRow(QStandardItem("Sub " + str(i)))
+            self.model.appendRow(item)
+

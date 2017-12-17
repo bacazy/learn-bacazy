@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QGridLayout, QWidget, QMainWindow, QAction, \
+from PyQt5.QtWidgets import QGridLayout, QWidget,\
+    QMainWindow, QAction, \
     qApp
 from matplotlib.backends.backend_qt5 import NavigationToolbar2QT
 from matplotlib.backends.backend_qt5agg import FigureCanvas
@@ -18,7 +19,7 @@ class MainView(QWidget):
         self.figure_view = FigureCanvas(Figure(figsize=(10, 6)))
         self.prj_view = ProjectView(parent=self)
         ax = self.figure_view.figure.add_subplot(111)
-        ax.plot([1, 23, 44], [23, 45, 65])
+        ax.plot([1, 23, 44], [23, 45, 6])
         layout.addWidget(self.prj_view, 0, 0)
         layout.addWidget(self.figure_view, 0, 1)
         layout.setColumnStretch(0, 1)
@@ -32,10 +33,10 @@ class MainView(QWidget):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle('QtXRD')
+        self.setWindowIcon(QIcon('assets/bird.png'))
         self.statusBar()
         self.createActions()
-        self.setWindowTitle('QtXRD')
-        self.setWindowIcon(QIcon('../assets/bird.ico'))
         self.mainView = MainView(self)
         self.setCentralWidget(self.mainView)
         self.createMenuBar()
@@ -43,16 +44,16 @@ class MainWindow(QMainWindow):
         self.resize(1500, 800)
 
     def createActions(self):
-        self.action_file_import = self.createAction('Import', self.import_data, './assets/import.ico', 'Ctrl+I',
+        self.action_file_import = self.createAction('Import', self.import_data, 'assets/import.png', 'Ctrl+I',
                                                     'import xrd data')
-        self.action_file_save = self.createAction('Save', self.save_project, './assets/save.ico', 'Ctrl+S',
+        self.action_file_save = self.createAction('Save', self.save_project, 'assets/save.png', 'Ctrl+S',
                                                   'Save Project')
-        self.action_file_open = self.createAction('Open', self.open_project, './assets/prj.ico', 'Ctrl+O', 'Open Project')
-        self.action_file_exit = self.createAction('Exit', qApp.quit, 'assets/exit.ico', None, 'Quit')
+        self.action_file_open = self.createAction('Open', self.open_project, 'assets/prj.png', 'Ctrl+O', 'Open Project')
+        self.action_file_exit = self.createAction('Exit', qApp.quit, 'assets/exit.png', None, 'Quit')
 
         self.action_help_about = self.createAction('About', self.on_help_about, None, None, None)
 
-        self.action_help_document = self.createAction('Document', self.on_help_document, 'assets/doc.ico', 'Ctrl+H',
+        self.action_help_document = self.createAction('Document', self.on_help_document, 'assets/doc.png', 'Ctrl+H',
                                                       'document')
 
         self.action_analysis_calculation = self.createAction('Calculation', self.on_analysis_calculation, None, None,
@@ -83,7 +84,6 @@ class MainWindow(QMainWindow):
     def on_help_about(self):
         msg = HelpAboutView()
         msg.exec()
-
 
     def on_help_document(self):
         print('help document')

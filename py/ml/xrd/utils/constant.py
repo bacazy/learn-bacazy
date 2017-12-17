@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 class ChartType:
     XRD_PATTERN = 'xrd_pattern'
     PLOT = 'plot'
