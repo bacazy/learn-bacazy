@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from xrd.misc.xrd import Xrd
+from xrd.misc import Xrd
 import numpy as np
 
 
@@ -12,8 +12,14 @@ def loadtxt(fname):
     return xrd
 
 
+def load_xrdprj(fname):
+    pass
+
+
 def load(fname, ftype='txt'):
     if ftype == 'txt':
         return loadtxt(fname)
+    if ftype == 'xrdprj':
+        return load_xrdprj(fname)
     else:
         raise Exception(ftype + " is not supported now")

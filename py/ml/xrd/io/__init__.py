@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-from xrd.io.xrd_parser import load
+from xrd.io.loader import load
