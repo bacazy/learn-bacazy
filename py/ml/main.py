@@ -4,6 +4,7 @@ import sys
 from PyQt5.QtWidgets import QApplication
 from xrd.view.MainWindow import MainWindow
 
+import tensorflow as tf
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     win = MainWindow()
