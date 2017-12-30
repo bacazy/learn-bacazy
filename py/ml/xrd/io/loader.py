@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from xrd.misc import Xrd
 import numpy as np
+
+from xrd.backend import Xrd
 
 
 def loadtxt(fname):

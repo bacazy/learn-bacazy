@@ -1,9 +1,10 @@
-from PyQt5.QtWidgets import QDialog, QMessageBox
+# -*- coding: utf-8 -*-
+from PyQt5.QtWidgets import QDialog
+
+from xrd.view.ui import help_about
 
 
-class HelpAboutView(QMessageBox):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('About')
-        self.setText("under GPLv3\n if any questions, please contact gc_zhangcheng@126.com")
-        self.setContentsMargins(30, 30, 30, 30)
+class HelpAboutView(QDialog, help_about.Ui_Dialog):
+    def __init__(self, parent=None):
+        super(HelpAboutView, self).__init__(parent)
+        self.setupUi(self)
