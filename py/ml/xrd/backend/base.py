@@ -2,14 +2,24 @@
 import numpy as np
 
 
+class Duplicated(Exception):
+    def __init__(self, cls=None, target=None):
+        super().__init__(str(cls) + " " + str(target) + " is duplicated")
+
+
 class Action:
     def __init__(self, action, params):
         self.action = action
+        self.label = action
         self.params = params
 
 
 class XrdMisc:
     def __init__(self):
+        self.name = None
+        self.label = None
+        self.selected = False
+        self.expand = False
         self.props = {}
         self.log = []
 
@@ -19,8 +29,16 @@ class XrdMisc:
         if callback is not None:
             callback(kwargs)
 
-    def get_prop(self, k):
-        return self.props[k]
+    def getType(self):
+        return type(self)
+
+    def get_prop(self, k, default=None):
+        if self.props.__contains__(k):
+            return self.props[k]
+        return default
+
+    def set_prop(self, k, v):
+        self.props[k] = v
 
     def push_log(self, action, **kwargs):
         self.log.append(Action(action, kwargs))
@@ -30,18 +48,6 @@ class XrdMisc:
             self.log.pop()
 
 
-class XrdPattern(XrdMisc):
-    def __init__(self, pid, pattern):
-        super().__init__()
-        self.pid = pid
-        self.pattern = pattern
-
-
-class Duplicated(Exception):
-    def __init__(self, cls=None, target=None):
-        super().__init__(str(cls) + " " + str(target) + " is duplicated")
-
-
 class Xrd(XrdMisc):
     def __init__(self):
         super().__init__()
@@ -49,7 +55,6 @@ class Xrd(XrdMisc):
         self.intensity = None
         self.fname = ''
         self.patterns = []
-        self.name=''
 
     def add_pattern(self, pattern):
         if self.patterns.__contains__(pattern.pid):
@@ -65,20 +70,3 @@ class Xrd(XrdMisc):
         self.fname = fname
         self.theta = f_data[:, 0]
         self.intensity = f_data[:, 1]
-
-
-class XrdProject(XrdMisc):
-    def __init__(self):
-        super().__init__()
-        self.xrds = []
-
-    def load(self, fname):
-        pass
-
-
-    def import_xrd(self, fname):
-        xrd = Xrd()
-        xrd.load(fname)
-        self.xrds.append(xrd)
-        return xrd
-

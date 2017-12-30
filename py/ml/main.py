@@ -2,6 +2,7 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication
+
 from xrd.view.MainWindow import MainWindow
 
 import tensorflow as tf
