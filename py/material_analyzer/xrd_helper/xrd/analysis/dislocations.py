@@ -61,21 +61,6 @@ def dislocation_density(peaks, fws, hkls, lam=0.154, c0=0.266, q=2):
     plt.show()
 
 
-def hw_dislocations(theta, fwhm, lam, size, b):
-    """
-    \frac{\beta cos \theta}{\lambda} = \frac{0.9}{D} + 2\eps \frac{sin \theta}{\lambda}
-    \rho = 14.4 \frac{\eps^2}{b^2}
-    :param theta: the diffraction angle
-    :param fwhm: full width at half maximum
-    :param lam: the wavelength of X-ray
-    :param size: grain size
-    :param b: Burger vector
-    :return: the density of dislocations
-    """
-    blob = fwhm * np.cos(theta) / lam - 0.9 / size
-    e = blob / (2 * np.sin(theta) / lam)
-    ro = 14.4 * np.square(e) / b / b
-    return ro
 
 
 if __name__ == '__main__':
