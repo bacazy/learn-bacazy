@@ -38,4 +38,20 @@ def loadfit(fname, skiprows=0):
             splt = pa.findall(line)
             array.append([float(e) for e in splt])
             skiprows += 1
-        return np.array(array)
+        data = np.array(array)
+        return {
+            '2theta': data[:, 0],
+            'd': data[:, 2],
+            'Centroid': data[:, 4],
+            'Height': data[:, 5],
+            'Area': data[:, 7],
+            'Shape': data[:, 10],
+            'Skew': data[:, 11],
+            'FWHM': data[:, 12],
+            'Breadth': data[:, 14],
+            'XS': data[:, 15],
+        }
+
+
+if __name__ == '__main__':
+    print(loadfit(r'E:\laji\expriment\raw\XRD\20170527\2017052707\2017052707.fit', skiprows=10))

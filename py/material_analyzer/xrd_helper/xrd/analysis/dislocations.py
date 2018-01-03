@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import optimize
 
+from xrd import hw_dislocations
+
 
 def HSquare(hkl):
     h = int(hkl / 100) % 10
@@ -62,8 +64,6 @@ def dislocation_density(peaks, fws, hkls, lam=0.154, c0=0.266, q=2):
     plt.show()
 
 
-
-
 if __name__ == '__main__':
     peaks = [44.447, 64.543, 81.912]
     peaks = [i * np.pi / 180.0 for i in peaks]
@@ -71,4 +71,3 @@ if __name__ == '__main__':
     hkls = [110, 200, 211]
     r = hw_dislocations(np.deg2rad(peaks[0]), 0.566, 0.154, 1.3, 0.3)
     print(r)
-
