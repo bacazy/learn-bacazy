@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import numpy as np
+
 from xrd import hw_dislocations, loadfit
 
 
@@ -22,7 +23,6 @@ class StrengthModel:
                 self.__dislocations_density__()
             else:
                 raise Exception('dislocation_density should be specified or the xrd_fit_file should be specified')
-
 
     def get_param(self, key, dtype='str'):
         if not self.params.__contains__(key):
@@ -125,6 +125,13 @@ class StrengthModel:
     def __dislocations_density__(self):
         fit_file = self.get_param('xrd_fit_file')
         data = loadfit(fit_file)
+        theta = data['2theta'][0] / 2.0
+        fwhm = data['FWHM']
+        lam = self.__get_float__('lambda')
+        g_size = self.__get_float__('grain_size')
+        b = self.__get_float__('b')
+        theta = np.deg2rad(theta)
+        fwhm = np.deg2rad(fwhm)
         self.metas['dislocation_density'] = hw_dislocations(theta=theta, fwhm=fwhm, lam=lam, grain_size=g_size, b=b)
 
 
@@ -146,9 +153,7 @@ def load_models(fname):
 
 
 if __name__ == '__main__':
-
     models = load_models(r'E:\laji\writing\n-ods\report.csv')
-
     for m in models:
         print(m.get_metas())
         print(m.predict_stress())
