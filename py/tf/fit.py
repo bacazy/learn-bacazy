@@ -22,7 +22,8 @@ def linear_fit(tf_x, tf_y, learn_rate=0.1):
     tf_offset = tf.Variable(1.0, dtype=tf.float32)
     tf_predict = tf.add(tf.multiply(tf_x, tf_coeff), tf_offset)
     loss = tf.reduce_sum(tf.square(tf.subtract(tf_predict, tf_y)))
-    return tf.train.GradientDescentOptimizer(learning_rate=learn_rate).minimize(loss=loss)
+    loss_sumary = tf.summary.scalar('loss', loss)
+    return tf.train.GradientDescentOptimizer(learning_rate=learn_rate).minimize(loss=loss), loss_sumary
 
 
 if __name__ == '__main__':
@@ -30,9 +31,15 @@ if __name__ == '__main__':
     plt.scatter(x, y)
     X = tf.constant(x, dtype=tf.float32)
     Y = tf.constant(y, dtype=tf.float32)
+    lin_fit = linear_fit(X, Y)
+
     with tf.Session() as session:
         nini = tf.global_variables_initializer()
+        writer = tf.summary.FileWriter('c:/logs', session.graph)
+        merge = tf.summary.merge_all()
         session.run(nini)
-        for i in range(101):
-            result = session.run(linear_fit(X, Y))
-            print(result)
+        for i in range(1000001):
+            result, summary = session.run(lin_fit)
+            writer.add_summary(summary, i)
+            if i % 100 == 0:
+                writer.flush()
