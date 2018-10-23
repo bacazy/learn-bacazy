@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from random import random
 
 import tensorflow as tf
 
@@ -20,4 +21,5 @@ def main(epochs=10000):
 
 
 if __name__ == '__main__':
-    main()
+    for i in range(15):
+        print(random() - 0.5)

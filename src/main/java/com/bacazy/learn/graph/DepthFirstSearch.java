@@ -18,19 +18,17 @@ public class DepthFirstSearch extends Search {
     private void dfs(int v) {
         marked[v] = true;
         count++;
-        for (int w: G.adj(v)){
-            if (!marked[w]){
+        for (int w : G.adj(v)) {
+            if (!marked[w]) {
                 dfs(w);
             }
         }
     }
 
-    @Override
     public boolean marked(int v) {
         return marked[v];
     }
 
-    @Override
     public int count() {
         return count;
     }

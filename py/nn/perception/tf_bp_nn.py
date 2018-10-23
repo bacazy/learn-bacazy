@@ -48,6 +48,6 @@ def random_train_data(size=1000):
 
 
 if __name__ == '__main__':
-    nn = TfBpNet([2, 7, 7, 2])
-    td, ds = random_train_data(10000000)
+    nn = TfBpNet([2, 7, 2])
+    td, ds = random_train_data(5000000)
     nn.train(td, ds,epochs=10000,learn_rate=0.5)

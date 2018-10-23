@@ -22,7 +22,7 @@ public class JoinUsageCase implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         print("ms");
-        Executor
+
         Thread sub = new Thread(new JoinUsageCase());
         sub.start();//启动子线程
         sub.join(1000);//在主线程中调用子线程的join方法，等待子线程结束再继续执行
