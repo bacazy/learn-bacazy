@@ -1,9 +1,24 @@
 # -*- coding: utf-8 -*-
 
-# -*- coding: utf-8 -*-
 from xrd.backend.base import Xrd
 import numpy as np
 import re
+from os import path
+
+
+def xrd_dir_map(fname):
+    data = np.loadtxt(fname, delimiter=',', skiprows=1, dtype=str)
+    m, n = data.shape
+    d = {}
+    for i in range(m):
+        d[data[i, 0]] = {'desc': data[i, 1], 'dir': data[i, 2]}
+    return d
+
+
+def get_xrd_file(dir, suffix):
+    basename = path.basename(dir)
+    file_name = basename + "." + suffix
+    return path.join(dir, file_name)
 
 
 def loadtxt(fname):
@@ -55,3 +70,4 @@ def loadfit(fname, skiprows=0):
 
 if __name__ == '__main__':
     print(loadfit(r'E:\laji\expriment\raw\XRD\20170527\2017052707\2017052707.fit', skiprows=10))
+    print(get_xrd_file('c:/Windows', 'fit'))

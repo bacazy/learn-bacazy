@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
+
+import matplotlib.pyplot as plt
+import matplotlib as mpl
 import numpy as np
+from xrd.io import xrd_dir_map, get_xrd_file
+
 from xrd import hw_dislocations, loadfit
 
 
@@ -11,18 +16,16 @@ class StrengthModel:
         self.metas = {}
 
     def add_params(self, kws={}):
-        for k, v in kws:
-            self.params[k] = v
+        for k in kws.keys():
+            self.params[k] = kws[k]
 
     def ready(self):
-        if self.params.__contains__('dislocation_density'):
-            self.refresh()
-        else:
-            if self.params.__contains__('xrd_fit_file'):
+        if not self.params.__contains__('dislocation_density'):
+            if self.params.__contains__('XRD'):
                 self.__dislocations_density__()
             else:
-                raise Exception('dislocation_density should be specified or the xrd_fit_file should be specified')
-
+                raise Exception('dislocation_density should be specified or the XRD should be specified')
+        self.refresh()
 
     def get_param(self, key, dtype='str'):
         if not self.params.__contains__(key):
@@ -69,8 +72,9 @@ class StrengthModel:
             K = [float(k.strip()) for k in K.split(';')]
             C = [float(c.strip()) for c in C.split(';')]
             Z = [float(z.strip()) for z in Z.split(';')]
-            solid_solution = np.sum([k * np.power(c, z) for k, c, z in zip(K, C, Z)])
-            self.metas['solid_solution_stress'] = solid_solution
+            solid_solution = [0.00689 * k * np.power(c, z) for k, c, z in zip(K, C, Z)]
+            print(self.get_param('name'), solid_solution)
+            self.metas['solid_solution_stress'] = np.sum(solid_solution) * 1e6
         return self.metas['solid_solution_stress']
 
     def __grain_boundary__(self, refresh=False):
@@ -82,17 +86,17 @@ class StrengthModel:
         return self.metas['grain_boundary_stress']
 
     def __dislocations_precipitates__(self, refresh=False):
-        if refresh or not self.metas.__contains__('dislocations_stress') or not self.metas.__contains__(
-                'precipitates_stress'):
+        if refresh or not self.metas.__contains__('dis_particles_stress'):
             self.__dislocations__()
             self.__precipitates__()
-        dis = self.metas['dislocations_stress']
-        pars = self.metas['precipitates_stress']
-        return np.sqrt(np.square(dis) + np.square(pars))
+            dis = self.metas['dislocations_stress']
+            pars = self.metas['precipitates_stress']
+            self.metas['dis_particles_stress'] = np.sqrt(np.square(dis) + np.square(pars))
+        return self.metas['dis_particles_stress']
 
     def __dislocations__(self):
         alpha = self.__get_float__('alpha')
-        density = self.__get_float__('dislocation_density')
+        density = self.params['dislocation_density']
         M = self.__get_float__('M')
         u = self.__get_float__('u')
         b = self.__get_float__('b')
@@ -106,8 +110,9 @@ class StrengthModel:
         r = self.__get_float__('r')
         f = self.__get_float__('f')
         numerator = 0.81 * M * u * b * np.log(np.sqrt(2.0 / 3) * r / b)
-        denominator = 2 * np.pi * np.sqrt(1 - v) * np.sqrt(2 * np.pi / 3 / f * r)
-        self.metas['precipitates_stress'] = numerator / denominator
+        denominator = 2 * np.pi * np.sqrt(1 - v) * np.sqrt(2 * np.pi / 3 / f) * r
+        precipitate = numerator / denominator
+        self.metas['precipitates_stress'] = precipitate
 
     def refresh(self):
         self.__lattice__(refresh=True)
@@ -120,12 +125,13 @@ class StrengthModel:
         for k in self.metas.keys():
             if k.endswith('_stress'):
                 sum = sum + self.metas[k]
-        return sum
+        return sum - self.metas['dislocations_stress'] - self.metas['precipitates_stress']
 
     def __dislocations_density__(self):
-        fit_file = self.get_param('xrd_fit_file')
-        data = loadfit(fit_file)
-        self.metas['dislocation_density'] = hw_dislocations(theta=theta, fwhm=fwhm, lam=lam, grain_size=g_size, b=b)
+        fname = self.get_param('xrd_report')
+        target = self.get_param('XRD')
+        self.params['dislocation_density'] = dis_density(fname, target)
+        self.metas['dislocation_density'] = dis_density(fname, target)
 
 
 def load_models(fname):
@@ -145,10 +151,64 @@ def load_models(fname):
     return models
 
 
+def collect_data(models, key):
+    data = [m.get_meta(key) for m in models]
+    return np.array(data)
+
+
+def stack_bar_chart(models):
+    mpl.rcParams['xtick.labelsize'] = 14
+    mpl.rcParams['ytick.labelsize'] = 14
+    mpl.rcParams['axes.labelsize'] = 14
+    mpl.rcParams['legend.fontsize'] = 12
+    plt.figure(figsize=(7, 5))
+
+    lattices = collect_data(models, 'lattice_stress') / 1e6
+    grain_size = collect_data(models, 'grain_boundary_stress') / 1e6
+    solid_solution = collect_data(models, 'solid_solution_stress') / 1e6
+    dis_par = collect_data(models, 'dis_particles_stress') / 1e6
+    size = lattices.size
+    width = 0.35
+    ind = [1, 2]
+
+    plt.bar(ind, lattices, width, label='lattice')
+    plt.bar(ind, solid_solution, width, label='solid solution', bottom=lattices)
+    plt.bar(ind, grain_size, width, label='grain size', bottom=lattices + solid_solution)
+    plt.bar(ind, dis_par, width, label='dislocations and precipitates', bottom=grain_size + lattices + solid_solution)
+
+    plt.bar([1.3, 2.3], [888.08, 1208], width/4, label='experimental')
+
+    labels = [m.get_param('name') for m in models]
+    plt.ylim([0, 1500])
+    plt.ylabel('Stress (MPa)')
+    plt.xticks([1.1, 2.1], labels)
+    plt.legend()
+    plt.savefig('E:/figure.png', dpi=800)
+
+
+def dis_density(fname, target):
+    xrd = xrd_dir_map(fname)[target]
+    xrd_file = get_xrd_file(xrd['dir'], 'fit')
+    xrd_fit = loadfit(xrd_file, 10)
+    thetas = xrd_fit['2theta'][:3]
+    fwhms = xrd_fit['FWHM'][:3] - np.array([0.12, 0.02, 0.0])
+    lam = 0.154056
+    fwhms = np.deg2rad(fwhms)
+    thetas = np.deg2rad(thetas)
+    y = fwhms * np.cos(thetas) / lam
+    x = 2 * np.sin(thetas) / lam
+    e = (y[1]-y[0])/(x[1]- x[0])
+    p = 14.4 * e * e / (np.square(2.48e-10))
+    return p
+
+
 if __name__ == '__main__':
-
     models = load_models(r'E:\laji\writing\n-ods\report.csv')
-
+    for m in models:
+        m.add_params({'xrd_report': r'E:\laji\writing\n-ods\xrd.csv'})
+        m.ready()
     for m in models:
         print(m.get_metas())
         print(m.predict_stress())
+
+    stack_bar_chart(models)

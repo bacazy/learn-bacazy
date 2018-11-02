@@ -16,7 +16,7 @@ def hw_dislocations(theta, fwhm, lam, grain_size, b):
     """
     blob = fwhm * np.cos(theta) / lam - 0.9 / grain_size
     e = blob / (2 * np.sin(theta) / lam)
-    ro = 14.4 * np.square(e) / b / b
+    ro = 14.4 * np.square(e) / np.square(b)
     return ro
 
 
