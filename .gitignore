@@ -1,6 +1,8 @@
 target/
 doc/_book
-test/
+*.iml
 .vscode/
 .idea/
 **.pyc
+.idea/
+
