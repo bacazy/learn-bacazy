@@ -1,0 +1,3 @@
+mybatis:
+  typeAliasesPackage: com.hs.hs_work.entity
+  mapperLocations: classpath:mapper/*.xml

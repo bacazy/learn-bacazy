@@ -12,31 +12,52 @@ class TfBpNet:
         self._input = tf.placeholder(dtype=tf.float32, name='input')
         for i in range(1, len(self._layer_count)):
             self._weight.append(
-                tf.Variable(tf.random_normal((self._layer_count[i - 1], self._layer_count[i]), mean=0.01), dtype=tf.float32))
+                tf.Variable(tf.random_normal((self._layer_count[i - 1], self._layer_count[i]), mean=0.01),
+                            dtype=tf.float32))
 
     def train(self, train_data, desire, learn_rate=0.1, epochs=100):
-        model = tf.train.GradientDescentOptimizer(learning_rate=learn_rate).minimize(loss=self.bp_error())
+        loss = self.bp_error()
+        saver = tf.train.Saver()
+        summary_loss = tf.summary.scalar('err', loss)
+        model = tf.train.GradientDescentOptimizer(learning_rate=learn_rate).minimize(loss=loss)
         with tf.Session() as session:
-            init = tf.global_variables_initializer()
-            session.run(init)
+            writer = tf.summary.FileWriter('c:/logs', session.graph)
+            try:
+                saver.restore(session, './model/model.cpt')
+            except:
+                session.run(tf.global_variables_initializer())
             for step in range(epochs):
-                session.run(model, feed_dict={self._input: train_data, self._desire: desire})
-                print(session.run(self.bp_error(), feed_dict={self._input: train_data, self._desire: desire}))
+                s_loss, _ = session.run([summary_loss, model],
+                                        feed_dict={self._input: train_data, self._desire: desire})
+                if step % 1000 == 0:
+                    writer.add_summary(s_loss, step)
+                    saver.save(session, './model/model.cpt')
+                    print(step)
 
-    def bp_error(self):
-        output = self._input
+    def output(self, input):
+        output = input
         for w in self._weight:
             output = tf.div(1.0, 1.0 + tf.exp(- tf.matmul(output, w)))
-        return tf.reduce_mean(tf.square(output - self._desire))
+        return output
+
+    def bp_error(self):
+        return tf.reduce_mean(tf.square(self.output(self._input) - self._desire))
 
     def weight(self, sess):
         return sess.run(self._weight)
+
+    def predict(self, input):
+        tf_in = tf.constant(input, dtype=tf.float32)
+        out = self.output(tf_in)
+        saver = tf.train.Saver()
+        with tf.Session() as sess:
+            saver.restore(sess, './model/model.cpt')
+            return sess.run(out)
 
 
 def random_train_data(size=1000):
     train_data = []
     desire = []
-
     for i in range(size):
         x = np.random.random()
         y = np.random.random()
@@ -47,7 +68,19 @@ def random_train_data(size=1000):
     return np.array(train_data), np.array(desire)
 
 
-if __name__ == '__main__':
+def test():
     nn = TfBpNet([2, 7, 7, 2])
-    td, ds = random_train_data(10000000)
-    nn.train(td, ds,epochs=10000,learn_rate=0.5)
+    for i in range(100):
+        td, ds = random_train_data(1)
+        # nn.train(td, ds,epochs=1000,learn_rate=0.1)
+        print(td, ds, nn.predict(td))
+
+
+if __name__ == '__main__':
+    nn = TfBpNet([2, 7, 14, 7, 2])
+    td, ds = random_train_data(10000)
+    # nn.train(td, ds, epochs=100001, learn_rate=0.8)
+    for i in range(10):
+        td, ds = random_train_data(1)
+        # nn.train(td, ds,epochs=1000,learn_rate=0.1)
+        print(td, ds, nn.predict(td))
